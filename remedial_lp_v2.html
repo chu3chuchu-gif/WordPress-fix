@@ -397,8 +397,8 @@
     font-family: 'Shippori Mincho', serif;
     font-size: clamp(24px, 3.5vw, 40px);
     font-weight: 700;
-    line-height: 1.7;
-    margin-bottom: 24px;
+    line-height: 1.45;
+    margin-bottom: 18px;
     color: var(--deep-brown);
   }
 
@@ -406,7 +406,59 @@
     font-size: 14px;
     color: var(--medium-brown);
     line-height: 2;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+  }
+
+  .cta-benefits {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    margin: 0 auto 26px;
+    max-width: 520px;
+    text-align: left;
+  }
+
+  .cta-benefits li {
+    font-size: 13px;
+    color: var(--medium-brown);
+    background: #fff;
+    border: 1px solid rgba(196,113,74,0.22);
+    padding: 10px 14px;
+  }
+
+  .cta-kicker {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--warm-terracotta);
+    border: 1px solid rgba(196,113,74,0.4);
+    padding: 7px 14px;
+    margin-bottom: 14px;
+    background: rgba(196,113,74,0.07);
+  }
+
+  .section-cta .area-buttons {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .section-cta .btn-area {
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(44,24,16,0.14);
+    padding: 22px 48px;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.3s;
+  }
+
+  .section-cta .btn-area:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(44,24,16,0.2);
+  }
+
+  .section-cta .btn-area-sub {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    opacity: 0.95;
+    margin-top: 4px;
   }
 
   .btn-note {
@@ -791,6 +843,7 @@
 <!-- CTA -->
 <section class="section-cta">
   <div class="cta-inner">
+    <span class="cta-kicker">かんたん30秒・先行登録</span>
     <h2 class="cta-title">
       オープン先行案内を<br>受け取りませんか？
     </h2>
@@ -798,15 +851,22 @@
       五反田・自由が丘エリアにてオープン予定。<br>
       ご希望のエリアを選んで、先行案内をお受け取りください。
     </p>
-    <p style="font-size:13px;color:var(--warm-terracotta);letter-spacing:0.1em;margin-bottom:20px;font-weight:700;">＼ 先行登録限定 ／ オープン時に特別価格でご案内します</p>
+    <ul class="cta-benefits">
+      <li>✓ 入力はかんたん（基本情報のみ）</li>
+      <li>✓ 先行登録者限定の特別価格を優先案内</li>
+      <li>✓ ご案内メールは不要になればいつでも停止可能</li>
+    </ul>
+    <p style="font-size:13px;color:var(--warm-terracotta);letter-spacing:0.1em;margin-bottom:16px;font-weight:700;">＼ 先行登録限定 ／ オープン時に特別価格でご案内します</p>
     <div class="area-buttons">
       <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-area">
         <span class="btn-area-label">五反田エリア</span>
-        <span class="btn-area-sub">先行案内を受け取る →</span>
+        <span class="btn-area-sub">先行案内フォームへ進む →</span>
+        <span class="btn-area-sub">入力目安：30秒</span>
       </a>
       <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="btn-area btn-area-secondary">
         <span class="btn-area-label">自由が丘エリア</span>
-        <span class="btn-area-sub">先行案内を受け取る →</span>
+        <span class="btn-area-sub">先行案内フォームへ進む →</span>
+        <span class="btn-area-sub">入力目安：30秒</span>
       </a>
     </div>
     <p class="btn-note">※ 登録いただいたメールアドレスにオープン情報をお送りします</p>
