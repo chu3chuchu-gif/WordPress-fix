@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>眠れない夜に、本当の理由があります | リメディアルセラピー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F9F5EF;
+    --warm-white: #FDF9F4;
+    --deep-brown: #2C1810;
+    --medium-brown: #5C3D2E;
+    --warm-terracotta: #C4714A;
+    --muted-sage: #8A9E8C;
+    --pale-gold: #D4A96A;
+    --light-peach: #F0E0D0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--deep-brown);
+    font-family: 'Noto Serif JP', serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: url('https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/ChatGPT-Image-2026年3月3日-19_28_24.png') center center / cover no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,15,20,0.85) 0%, rgba(10,15,20,0.6) 50%, rgba(10,15,20,0.3) 100%);
+    z-index: 1;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--pale-gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-main {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    color: var(--ivory);
+    line-height: 1.5;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-main .accent {
+    color: var(--warm-terracotta);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 2;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    display: none;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 160px;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800;
+    color: rgba(255,255,255,0.03);
+    white-space: nowrap;
+    letter-spacing: -0.05em;
+  }
+
+  /* SECTION: Problem */
+  .section-problem {
+    padding: 100px 40px;
+    background: var(--ivory);
+    position: relative;
+  }
+
+  .section-problem::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--pale-gold), transparent);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--warm-terracotta);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(24px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    color: var(--deep-brown);
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 64px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(92,61,46,0.1);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--medium-brown);
+  }
+
+  .check-icon {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--warm-terracotta);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--warm-terracotta);
+    font-size: 14px;
+  }
+
+  .answer-box {
+    background: var(--deep-brown);
+    color: var(--ivory);
+    padding: 48px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .answer-box::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--warm-terracotta);
+  }
+
+  .answer-box .big-text {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 700;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .answer-box .big-text em {
+    color: #D4A96A;
+    font-style: normal;
+  }
+
+  .answer-box p {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 2;
+  }
+
+  /* SECTION: Why */
+  .section-why {
+    padding: 60px 40px;
+    background: var(--warm-white);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(92,61,46,0.1);
+    margin-top: 32px;
+    align-items: start;
+    grid-auto-rows: min-content;
+  }
+
+  .why-card {
+    background: var(--warm-white);
+    padding: 12px 20px;
+    position: relative;
+  }
+
+  .why-number {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: rgba(196,113,74,0.25);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .why-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--deep-brown);
+  }
+
+  .why-body {
+    font-size: 13px;
+    color: var(--medium-brown);
+    line-height: 2;
+  }
+
+  /* SECTION: Result */
+  .section-result {
+    padding: 60px 40px;
+    background: #f5ede4;
+  }
+
+  .result-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(92,61,46,0.15);
+    align-items: start;
+  }
+
+  .flow-num {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--warm-terracotta);
+    opacity: 0.6;
+    line-height: 1;
+  }
+
+  .flow-content h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+
+  .flow-content p {
+    font-size: 14px;
+    color: #1a1a1a;
+    line-height: 2;
+  }
+
+  /* SECTION: Profile */
+  .section-profile {
+    padding: 100px 40px;
+    background: var(--deep-brown);
+    color: var(--ivory);
+  }
+
+  .profile-inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .profile-img-box {
+    position: relative;
+  }
+
+  .profile-img-box::before {
+    content: '';
+    position: absolute;
+    top: 16px; left: 16px;
+    right: -16px; bottom: -16px;
+    border: 1px solid rgba(212,169,106,0.3);
+    pointer-events: none;
+  }
+
+  .profile-label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--pale-gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .profile-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .profile-title {
+    font-size: 12px;
+    color: var(--warm-terracotta);
+    letter-spacing: 0.1em;
+    margin-bottom: 32px;
+  }
+
+  .profile-text {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 2.2;
+  }
+
+  .credential-list {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .credential-item {
+    font-size: 12px;
+    color: #dddddd;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .credential-item::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--pale-gold);
+  }
+
+  /* CTA Section */
+  .section-cta {
+    padding: 120px 40px;
+    background: var(--ivory);
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(24px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    color: var(--deep-brown);
+  }
+
+  .cta-sub {
+    font-size: 14px;
+    color: var(--medium-brown);
+    line-height: 2;
+    margin-bottom: 48px;
+  }
+
+  .btn-note {
+    font-size: 11px;
+    color: rgba(92,61,46,0.5);
+    margin-top: 16px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--deep-brown);
+    color: #dddddd;
+    padding: 40px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* CTA Buttons */
+  .area-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .btn-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 48px;
+    background: var(--warm-terracotta);
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .btn-area:hover { background: #b05f3a; }
+
+  .btn-area-secondary {
+    background: var(--deep-brown);
+    border: 1px solid var(--warm-terracotta);
+  }
+
+  .btn-area-secondary:hover { background: #3d2418; }
+
+  .btn-area-label {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .btn-area-sub {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    opacity: 0.85;
+  }
+
+  /* Hero CTA Buttons */
+  .hero-area-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero-area-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    background: var(--warm-terracotta);
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .hero-area-btn:hover { background: #b05f3a; }
+
+  .hero-area-btn-sub {
+    background: #8A6A5A;
+    border: 1px solid #8A6A5A;
+    animation-delay: 0.95s;
+  }
+
+  .hero-area-btn-sub:hover { background: #7a5a4a; }
+
+  .hero-btn-area {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-btn-sub {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    opacity: 0.85;
+  }
+
+  .hero-scroll-hint {
+    font-size: 11px;
+    color: rgba(249,245,239,0.35);
+    letter-spacing: 0.2em;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.1s forwards;
+  }
+
+  /* Mid-page CTA block */
+  .mid-cta {
+    padding: 48px 40px;
+    background: var(--deep-brown);
+    text-align: center;
+  }
+
+  .mid-cta .area-buttons {
+    max-width: 500px;
+    margin: 0 auto 16px;
+  }
+
+  .mid-cta .btn-area {
+    background: var(--warm-terracotta);
+  }
+
+  .mid-cta .btn-area-secondary {
+    background: transparent;
+    border: 1px solid var(--warm-terracotta);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-left {
+      padding: 80px 32px 60px;
+    }
+
+    .hero-right {
+      display: none;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .profile-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .profile-img-box {
+      max-width: 240px;
+    }
+
+    .answer-box {
+      padding: 36px 28px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Remedial Therapy for Women 40s–60s</span>
+    <h1 class="hero-main">
+      疲れが取れない、眠れない。<br>
+      <span class="accent">その体には<br>わけがあります。</span>
+    </h1>
+    <p class="hero-sub">
+      関節の可動域が狭くなると、<br>
+      今ある筋肉が正しく使えなくなります。<br>
+      そして夜中に目が覚め、体が回復できなくなる。
+    </p>
+    <p style="font-size:13px;color:#F4B183;letter-spacing:0.15em;margin-bottom:16px;display:inline-block;font-weight:600;">＼ 先行登録限定 ／ オープン時に特別価格でご案内します</p>
+    <div class="hero-area-btns">
+      <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="hero-area-btn">
+        <span class="hero-btn-area">五反田エリア</span>
+        <span class="hero-btn-sub">先行案内を受け取る →</span>
+      </a>
+      <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="hero-area-btn hero-area-btn-sub">
+        <span class="hero-btn-area">自由が丘エリア</span>
+        <span class="hero-btn-sub">先行案内を受け取る →</span>
+      </a>
+    </div>
+    <p class="hero-scroll-hint">↓ 詳しく読む</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-text">sleep</div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section-problem">
+  <div class="container">
+    <span class="section-label">こんな症状、ありませんか？</span>
+    <h2 class="section-title">
+      40代からの「眠れない」には、<br>見落とされがちな原因があります。
+    </h2>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>夜中の2〜3時に目が覚めて、そのまま眠れなくなる</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>寝返りを打つたびに体が痛くて、深く眠れない</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>朝起きたとき、すでに体が疲れている感覚がある</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>肩・股関節・背中のどこかが常に張っている</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>「運動不足だから」と言われるが、運動しても変わらない</span>
+      </div>
+    </div>
+
+    <div class="answer-box">
+      <p class="big-text">
+        それは、<em>年齢のせいでは<br>ありません。</em>
+      </p>
+      <p>
+        今ある筋肉が正しく使えていないだけです。<br><br>
+        筋膜の緊張をほぐし、可動域を広げ、自律神経を整えると副交感神経が優位に。呼吸が深くなり、夜中に目が覚めにくくなります。<br><br>
+        寝具を変えるより先に、体を整えることが大切です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 1 -->
+<div class="mid-cta">
+  <p style="font-size:13px;color:#F4B183;letter-spacing:0.15em;margin-bottom:20px;font-weight:600;">＼ 先行登録限定 ／ オープン時に特別価格でご案内します</p>
+  <div class="area-buttons">
+    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-area">
+      <span class="btn-area-label">五反田エリア</span>
+      <span class="btn-area-sub">先行案内を受け取る →</span>
+    </a>
+    <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="btn-area btn-area-secondary">
+      <span class="btn-area-label">自由が丘エリア</span>
+      <span class="btn-area-sub">先行案内を受け取る →</span>
+    </a>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="section-why">
+  <div class="container">
+    <span class="section-label">なぜリメディアルセラピーなのか</span>
+    <h2 class="section-title">
+      自律神経を、手技で整える。あなたの体に合わせて。
+    </h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-number">01</div>
+        <div class="why-title">毎回、体の状態に合わせた施術</div>
+        <div class="why-body">決まった流れはありません。その日の体の状態を見て、最適なアプローチを選びます。</div>
+      </div>
+      <div class="why-card">
+        <div class="why-number">02</div>
+        <div class="why-title">根拠のある手技</div>
+        <div class="why-body">関節モビライゼーション、トリガーポイント療法など、体の構造に基づいたアプローチで、確かな変化を感じていただけます。</div>
+      </div>
+      <div class="why-card">
+        <div class="why-number">03</div>
+        <div class="why-title">10年以上の実績</div>
+        <div class="why-body">個人セラピストとして10年以上、多くの方の「眠れない」「体が重い」悩みに向き合ってきた経験と技術。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULT FLOW -->
+<section class="section-result">
+  <div class="container">
+    <span class="section-label">施術で起きること</span>
+    <h2 class="section-title">関節の可動域が広がると、<br>体に何が起きるか。</h2>
+
+    <div style="margin-bottom:40px;overflow:hidden;">
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/キュア_DSC6245-scaled.jpg" alt="施術風景" style="width:100%;max-height:400px;object-fit:cover;object-position:center 30%;">
+    </div>
+    <div class="result-flow">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h3>関節の可動域が広がる</h3>
+          <p>固まっていた関節が動くようになり、体全体の連動が戻ります。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h3>筋肉が正しく使えるようになる</h3>
+          <p>今ある筋肉が本来の役割を果たせるようになり、無駄な緊張が抜けます。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h3>夜中に目が覚めにくくなる</h3>
+          <p>体が適切にリラックスできるようになり、深い睡眠を取り戻せます。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <h3>翌朝、すっきり起きられる</h3>
+          <p>睡眠中に体が回復し、朝の疲れ感が変わります。</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;text-align:center;">
+      <p style="font-size:11px;letter-spacing:0.3em;color:var(--warm-terracotta);margin-bottom:16px;">BEFORE / AFTER</p>
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_00000000c00c7209ac897560c940c7a7.png" alt="施術前後の姿勢変化" style="max-width:500px;width:100%;display:inline-block;">
+      <p style="font-size:12px;color:var(--medium-brown);margin-top:16px;line-height:1.8;">関節の可動域が広がると、体の使い方が変わります。<br>左：施術前　右：施術後</p>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA 2 -->
+<div class="mid-cta">
+  <p style="font-size:13px;color:#F4B183;letter-spacing:0.15em;margin-bottom:20px;font-weight:600;">＼ 先行登録限定 ／ オープン時に特別価格でご案内します</p>
+  <div class="area-buttons">
+    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-area">
+      <span class="btn-area-label">五反田エリア</span>
+      <span class="btn-area-sub">先行案内を受け取る →</span>
+    </a>
+    <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="btn-area btn-area-secondary">
+      <span class="btn-area-label">自由が丘エリア</span>
+      <span class="btn-area-sub">先行案内を受け取る →</span>
+    </a>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<section class="section-profile">
+  <div class="profile-inner">
+    <div class="profile-img-box">
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/DSC6094.jpgキュア-scaled.jpg" alt="織田朋奈" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;">
+    </div>
+    <div>
+      <p class="profile-label">Therapist</p>
+      <h3 class="profile-name">織田 朋奈</h3>
+      <p class="profile-title">リメディアルセラピスト</p>
+      <p class="profile-text">
+        10年以上、個人セラピストとして数多くの方の体と向き合ってきました。
+        「眠れない」「体が重い」という悩みを持つ方々に寄り添い、
+        関節の可動域を整えることで体本来の力を引き出す施術を続けています。<br><br>
+        リメディアルセラピーの考案者・森岡望氏のメソッドをベースに、
+        一人ひとりの状態に合わせたオーダーメイドの施術を提供しています。
+      </p>
+      <div class="credential-list">
+        <div class="credential-item">リメディアルセラピスト歴10年以上</div>
+        <div class="credential-item">森岡望氏考案リメディアルセラピー 認定セラピスト</div>
+        <div class="credential-item">個人セラピストとして延べ多数のクライアントを担当</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta">
+  <div class="cta-inner">
+    <h2 class="cta-title">
+      オープン先行案内を<br>受け取りませんか？
+    </h2>
+    <p class="cta-sub">
+      五反田・自由が丘エリアにてオープン予定。<br>
+      ご希望のエリアを選んで、先行案内をお受け取りください。
+    </p>
+    <p style="font-size:13px;color:var(--warm-terracotta);letter-spacing:0.1em;margin-bottom:20px;font-weight:700;">＼ 先行登録限定 ／ オープン時に特別価格でご案内します</p>
+    <div class="area-buttons">
+      <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-area">
+        <span class="btn-area-label">五反田エリア</span>
+        <span class="btn-area-sub">先行案内を受け取る →</span>
+      </a>
+      <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="btn-area btn-area-secondary">
+        <span class="btn-area-label">自由が丘エリア</span>
+        <span class="btn-area-sub">先行案内を受け取る →</span>
+      </a>
+    </div>
+    <p class="btn-note">※ 登録いただいたメールアドレスにオープン情報をお送りします</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 日本リメディアルセラピー協会 JART | remedialtherapy.jp</p>
+</footer>
+
+</body>
+</html>
