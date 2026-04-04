@@ -27,10 +27,6 @@
     padding-bottom: 72px;
   }
 
-  /* =====================
-     STICKY BOTTOM BAR
-     主：LINE登録　副：予約（小さめ）
-  ===================== */
   .sticky-bar {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -40,7 +36,6 @@
     box-shadow: 0 -2px 16px rgba(0,0,0,0.2);
   }
 
-  /* LINE側：幅広め */
   .sticky-btn-line {
     flex: 3;
     display: flex;
@@ -53,7 +48,6 @@
     transition: opacity 0.2s;
   }
 
-  /* 予約側：幅狭め・控えめ */
   .sticky-btn-reserve {
     flex: 2;
     display: flex;
@@ -77,7 +71,6 @@
     letter-spacing: 0.04em;
   }
 
-  /* 予約ラベルは少し小さく */
   .sticky-btn-reserve .sticky-btn-label { font-size: 12px; }
 
   .sticky-btn-sub {
@@ -86,9 +79,7 @@
     letter-spacing: 0.06em;
   }
 
-  /* =====================
-     HERO
-  ===================== */
+  /* HERO */
   .hero {
     min-height: 100vh;
     background: url('https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/ChatGPT-Image-2026年3月3日-19_28_24.png') center center / cover no-repeat;
@@ -134,10 +125,7 @@
     animation: fadeUp 0.7s 0.3s forwards;
   }
 
-  .hero-main strong {
-    color: var(--warm-terracotta);
-    font-weight: 800;
-  }
+  .hero-main strong { color: var(--warm-terracotta); font-weight: 800; }
 
   .hero-target {
     font-size: 14px;
@@ -148,7 +136,6 @@
     animation: fadeUp 0.7s 0.5s forwards;
   }
 
-  /* LINE登録ブロック：ヒーロー内で主役 */
   .hero-line-block {
     opacity: 0;
     animation: fadeUp 0.7s 0.65s forwards;
@@ -197,7 +184,6 @@
     font-size: 10px;
   }
 
-  /* 副導線：テキストリンク風 */
   .hero-sub-link {
     opacity: 0;
     animation: fadeUp 0.7s 0.8s forwards;
@@ -212,9 +198,7 @@
     letter-spacing: 0.04em;
   }
 
-  /* =====================
-     BUTTONS
-  ===================== */
+  /* BUTTONS */
   .btn-line {
     display: flex;
     align-items: center;
@@ -262,18 +246,13 @@
 
   .btn-reserve-dark:hover { background: rgba(92,61,46,0.06); }
 
-  /* =====================
-     SELF CHECK
-  ===================== */
+  /* SELF CHECK */
   .section-check {
     padding: 64px 40px;
     background: var(--deep-brown);
   }
 
-  .check-container {
-    max-width: 720px;
-    margin: 0 auto;
-  }
+  .check-container { max-width: 720px; margin: 0 auto; }
 
   .check-label {
     font-size: 10px;
@@ -314,11 +293,7 @@
     transition: all 0.18s;
   }
 
-  .check-q-box.checked {
-    background: var(--line-green);
-    border-color: var(--line-green);
-  }
-
+  .check-q-box.checked { background: var(--line-green); border-color: var(--line-green); }
   .check-q-box.checked::after { content: '✓'; color: white; font-size: 13px; }
   .check-q-text { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.65; }
 
@@ -341,40 +316,23 @@
     line-height: 1.7;
   }
 
-  .check-result-body {
-    font-size: 13px;
-    color: rgba(255,255,255,0.72);
-    line-height: 2;
-  }
+  .check-result-body { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 2; }
 
   .check-cta { text-align: center; }
-
-  /* チェック後のCTA：LINE登録を主軸に */
-  .check-cta-line-label {
-    font-size: 11px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.12em;
-    margin-bottom: 8px;
-  }
-
-  .check-cta-sub {
-    font-size: 11px;
-    color: rgba(255,255,255,0.32);
-    margin-top: 12px;
-    line-height: 1.8;
-    letter-spacing: 0.06em;
-  }
+  .check-cta-line-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; margin-bottom: 8px; }
+  .check-cta-sub { font-size: 11px; color: rgba(255,255,255,0.32); margin-top: 12px; line-height: 1.8; letter-spacing: 0.06em; }
 
   /* =====================
-     PROBLEM
+     REASON SECTION（01〜03）
+     旧：こんな症状、ありませんか？
   ===================== */
-  .section-problem {
+  .section-reason {
     padding: 96px 40px;
     background: var(--ivory);
     position: relative;
   }
 
-  .section-problem::before {
+  .section-reason::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -398,64 +356,65 @@
     font-size: clamp(21px, 2.8vw, 36px);
     font-weight: 700;
     line-height: 1.78;
-    margin-bottom: 44px;
+    margin-bottom: 18px;
     color: var(--deep-brown);
   }
 
-  .checklist { display: flex; flex-direction: column; gap: 0; margin-bottom: 52px; }
-
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(92,61,46,0.1);
-    font-size: 16px;
-    line-height: 1.7;
+  .section-intro {
+    font-size: 14px;
     color: var(--medium-brown);
+    line-height: 2.1;
+    margin-bottom: 56px;
   }
 
-  .check-icon {
-    width: 28px; height: 28px;
-    border: 1.5px solid var(--warm-terracotta);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    color: var(--warm-terracotta);
-    font-size: 12px;
-    margin-top: 3px;
+  /* 理由カード */
+  .reason-list { display: flex; flex-direction: column; gap: 0; }
+
+  .reason-item {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 28px;
+    padding: 44px 0;
+    border-bottom: 1px solid rgba(92,61,46,0.1);
+    align-items: start;
   }
 
-  .answer-box {
-    background: var(--deep-brown);
-    color: var(--ivory);
-    padding: 44px 52px;
-    position: relative;
-  }
+  .reason-item:first-child { border-top: 1px solid rgba(92,61,46,0.1); }
 
-  .answer-box::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: var(--warm-terracotta);
-  }
-
-  .answer-box .big-text {
+  .reason-num {
     font-family: 'Shippori Mincho', serif;
-    font-size: clamp(17px, 2.2vw, 24px);
-    font-weight: 700;
-    line-height: 1.85;
-    margin-bottom: 20px;
-    color: #ffffff;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(196,113,74,0.18);
+    line-height: 1;
+    padding-top: 4px;
   }
 
-  .answer-box .big-text em { color: #D4A96A; font-style: normal; }
-  .answer-box p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 2.1; }
+  .reason-content h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    color: var(--deep-brown);
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
 
-  /* =====================
-     MID CTA（LINE登録主軸）
-  ===================== */
+  .reason-content p {
+    font-size: 14px;
+    color: var(--medium-brown);
+    line-height: 2.2;
+  }
+
+  .reason-note {
+    margin-top: 36px;
+    font-size: 11px;
+    color: rgba(92,61,46,0.42);
+    line-height: 1.9;
+    padding-left: 16px;
+    border-left: 2px solid rgba(92,61,46,0.15);
+  }
+
+  /* MID CTA */
   .mid-cta {
     padding: 52px 40px;
     background: var(--deep-brown);
@@ -492,19 +451,9 @@
     text-align: left;
   }
 
-  .mid-cta-contents-title {
-    font-size: 10px;
-    color: rgba(255,255,255,0.38);
-    letter-spacing: 0.2em;
-    margin-bottom: 10px;
-  }
+  .mid-cta-contents-title { font-size: 10px; color: rgba(255,255,255,0.38); letter-spacing: 0.2em; margin-bottom: 10px; }
 
-  .mid-cta-contents ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+  .mid-cta-contents ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 
   .mid-cta-contents ul li {
     font-size: 13px;
@@ -514,81 +463,108 @@
     line-height: 1.7;
   }
 
-  .mid-cta-contents ul li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--line-green);
-    font-size: 10px;
-  }
+  .mid-cta-contents ul li::before { content: '▸'; position: absolute; left: 0; color: var(--line-green); font-size: 10px; }
 
-  .mid-cta-sub {
-    font-size: 11px;
-    color: rgba(255,255,255,0.38);
-    margin-bottom: 20px;
-    line-height: 1.9;
-  }
+  .mid-cta-sub { font-size: 11px; color: rgba(255,255,255,0.38); margin-bottom: 20px; line-height: 1.9; }
 
-  /* 副導線：予約ボタン（控えめ）*/
-  .mid-cta-divider {
-    font-size: 10px;
-    color: rgba(255,255,255,0.22);
-    letter-spacing: 0.2em;
-    margin: 18px 0 10px;
-  }
-
-  .mid-cta-reserve-note {
-    font-size: 11px;
-    color: rgba(255,255,255,0.32);
-    margin-top: 8px;
-    line-height: 1.7;
-  }
+  .mid-cta-divider { font-size: 10px; color: rgba(255,255,255,0.22); letter-spacing: 0.2em; margin: 18px 0 10px; }
+  .mid-cta-reserve-note { font-size: 11px; color: rgba(255,255,255,0.32); margin-top: 8px; line-height: 1.7; }
 
   /* =====================
-     WHY
+     COMPARISON（旧：WHY）
   ===================== */
-  .section-why {
+  .section-compare {
     padding: 80px 40px;
     background: var(--warm-white);
   }
 
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1px;
-    background: rgba(92,61,46,0.1);
+  .compare-table-wrap {
     margin-top: 40px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .why-card { background: var(--warm-white); padding: 28px 22px; }
-
-  .why-number {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 34px;
-    font-weight: 800;
-    color: rgba(196,113,74,0.2);
-    line-height: 1;
-    margin-bottom: 12px;
+  .compare-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
   }
 
-  .why-title {
+  /* ヘッダー行 */
+  .compare-table thead th {
+    padding: 16px 20px;
     font-family: 'Shippori Mincho', serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    margin-bottom: 12px;
+    text-align: center;
+    border-bottom: 2px solid rgba(92,61,46,0.12);
+    color: var(--medium-brown);
+  }
+
+  /* 自社列：強調 */
+  .compare-table thead th.col-us {
+    background: var(--deep-brown);
+    color: var(--ivory);
+    font-size: 15px;
+    border-bottom: 2px solid var(--warm-terracotta);
+  }
+
+  .col-us-badge {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--pale-gold);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+
+  /* 行ラベル列 */
+  .compare-table td.row-label {
+    padding: 20px 20px;
+    font-size: 13px;
+    font-weight: 700;
     color: var(--deep-brown);
-    line-height: 1.5;
+    background: rgba(92,61,46,0.04);
+    border-bottom: 1px solid rgba(92,61,46,0.08);
+    white-space: nowrap;
+    letter-spacing: 0.04em;
   }
 
-  .why-body { font-size: 13px; color: var(--medium-brown); line-height: 2; }
-
-  /* =====================
-     FLOW
-  ===================== */
-  .section-flow {
-    padding: 80px 40px;
-    background: #f5ede4;
+  /* 通常セル */
+  .compare-table td {
+    padding: 20px 20px;
+    font-size: 13px;
+    color: var(--medium-brown);
+    text-align: center;
+    border-bottom: 1px solid rgba(92,61,46,0.08);
+    line-height: 1.75;
+    vertical-align: middle;
   }
+
+  /* 自社列セル */
+  .compare-table td.col-us {
+    background: rgba(44,24,16,0.04);
+    color: var(--deep-brown);
+    font-weight: 700;
+    border-left: 2px solid var(--warm-terracotta);
+    border-right: 2px solid var(--warm-terracotta);
+  }
+
+  .compare-table tr:last-child td.col-us {
+    border-bottom: 2px solid var(--warm-terracotta);
+  }
+
+  /* 即効性の注記 */
+  .compare-table td .note {
+    display: block;
+    font-size: 10px;
+    color: rgba(92,61,46,0.45);
+    margin-top: 3px;
+    font-weight: 400;
+  }
+
+  /* FLOW */
+  .section-flow { padding: 80px 40px; background: #f5ede4; }
 
   .flow-steps { display: flex; flex-direction: column; margin-top: 44px; }
 
@@ -627,28 +603,13 @@
     border-left: 3px solid rgba(92,61,46,0.2);
   }
 
-  .flow-reassure p {
-    font-size: 12px;
-    color: var(--medium-brown);
-    line-height: 2;
-  }
+  .flow-reassure p { font-size: 12px; color: var(--medium-brown); line-height: 2; }
 
-  /* =====================
-     BEFORE/AFTER
-  ===================== */
-  .section-result {
-    padding: 80px 40px;
-    background: var(--ivory);
-  }
+  /* BEFORE/AFTER */
+  .section-result { padding: 80px 40px; background: var(--ivory); }
 
-  /* =====================
-     PROFILE
-  ===================== */
-  .section-profile {
-    padding: 96px 40px;
-    background: var(--deep-brown);
-    color: var(--ivory);
-  }
+  /* PROFILE */
+  .section-profile { padding: 96px 40px; background: var(--deep-brown); color: var(--ivory); }
 
   .profile-inner {
     display: grid;
@@ -664,27 +625,13 @@
   .profile-img-box::before {
     content: '';
     position: absolute;
-    top: 14px; left: 14px;
-    right: -14px; bottom: -14px;
+    top: 14px; left: 14px; right: -14px; bottom: -14px;
     border: 1px solid rgba(212,169,106,0.22);
     pointer-events: none;
   }
 
-  .profile-label {
-    font-size: 10px;
-    letter-spacing: 0.42em;
-    color: var(--pale-gold);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .profile-name {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 24px;
-  }
-
+  .profile-label { font-size: 10px; letter-spacing: 0.42em; color: var(--pale-gold); text-transform: uppercase; margin-bottom: 12px; }
+  .profile-name { font-family: 'Shippori Mincho', serif; font-size: 25px; font-weight: 700; margin-bottom: 24px; }
   .profile-text { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 2.2; }
 
   .credential-list { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; }
@@ -699,14 +646,8 @@
 
   .credential-item::before { content: '—'; position: absolute; left: 0; color: var(--pale-gold); }
 
-  /* =====================
-     FINAL CTA（LINE登録主軸）
-  ===================== */
-  .section-final-cta {
-    padding: 96px 40px;
-    background: var(--ivory);
-    text-align: center;
-  }
+  /* FINAL CTA */
+  .section-final-cta { padding: 96px 40px; background: var(--ivory); text-align: center; }
 
   .final-cta-inner { max-width: 560px; margin: 0 auto; }
 
@@ -730,34 +671,13 @@
     color: var(--deep-brown);
   }
 
-  .final-cta-sub {
-    font-size: 14px;
-    color: var(--medium-brown);
-    line-height: 2;
-    margin-bottom: 28px;
-  }
+  .final-cta-sub { font-size: 14px; color: var(--medium-brown); line-height: 2; margin-bottom: 28px; }
 
-  /* LINE登録の内容説明ブロック */
-  .line-contents-box {
-    background: var(--deep-brown);
-    padding: 24px 28px;
-    margin-bottom: 22px;
-    text-align: left;
-  }
+  .line-contents-box { background: var(--deep-brown); padding: 24px 28px; margin-bottom: 22px; text-align: left; }
 
-  .line-contents-box-title {
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    color: rgba(255,255,255,0.38);
-    margin-bottom: 12px;
-  }
+  .line-contents-box-title { font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.38); margin-bottom: 12px; }
 
-  .line-contents-box ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .line-contents-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 
   .line-contents-box ul li {
     font-size: 14px;
@@ -767,42 +687,15 @@
     line-height: 1.75;
   }
 
-  .line-contents-box ul li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--line-green);
-    font-size: 11px;
-  }
+  .line-contents-box ul li::before { content: '▸'; position: absolute; left: 0; color: var(--line-green); font-size: 11px; }
 
   .final-cta-btns { display: flex; flex-direction: column; gap: 10px; }
-
   .final-cta-btns .btn-line { padding: 20px 28px; font-size: 17px; }
 
-  /* 副導線：予約ボタン群（最終CTA内） */
-  .reserve-section {
-    margin-top: 28px;
-    padding-top: 22px;
-    border-top: 1px solid rgba(92,61,46,0.12);
-    text-align: center;
-  }
-
-  .reserve-section-label {
-    font-size: 11px;
-    color: rgba(92,61,46,0.45);
-    letter-spacing: 0.16em;
-    margin-bottom: 12px;
-    display: block;
-  }
-
+  .reserve-section { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(92,61,46,0.12); text-align: center; }
+  .reserve-section-label { font-size: 11px; color: rgba(92,61,46,0.45); letter-spacing: 0.16em; margin-bottom: 12px; display: block; }
   .reserve-btns { display: flex; flex-direction: column; gap: 8px; }
-
-  .reserve-note {
-    font-size: 11px;
-    color: rgba(92,61,46,0.38);
-    margin-top: 10px;
-    line-height: 1.8;
-  }
+  .reserve-note { font-size: 11px; color: rgba(92,61,46,0.38); margin-top: 10px; line-height: 1.8; }
 
   .line-reply-box {
     font-size: 12px;
@@ -839,22 +732,19 @@
 
   @media (max-width: 768px) {
     .hero-inner { padding: 68px 24px 52px; }
-    .section-problem, .section-why, .section-flow,
+    .section-reason, .section-compare, .section-flow,
     .section-result, .section-profile, .section-final-cta { padding-left: 22px; padding-right: 22px; }
     .section-check, .mid-cta { padding-left: 22px; padding-right: 22px; }
-    .why-grid { grid-template-columns: 1fr; }
+    .reason-item { grid-template-columns: 48px 1fr; gap: 16px; }
+    .reason-num { font-size: 36px; }
     .profile-inner { grid-template-columns: 1fr; gap: 36px; }
     .profile-img-box { max-width: 200px; }
-    .answer-box { padding: 30px 22px; }
   }
 </style>
 </head>
 <body>
 
-<!-- =====================
-     STICKY BAR
-     主：LINE登録　副：予約（幅狭め・控えめ）
-===================== -->
+<!-- STICKY BAR -->
 <div class="sticky-bar">
   <a href="https://lin.ee/XXXXXXX" target="_blank" class="sticky-btn-line">
     <span class="sticky-btn-label">LINEで睡眠情報を受け取る</span>
@@ -866,9 +756,7 @@
   </a>
 </div>
 
-<!-- =====================
-     HERO
-===================== -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <span class="hero-eyebrow">40s–60s Women · 城南エリア · Remedial Therapy</span>
@@ -880,41 +768,26 @@
       医療機関に行くほどではないけれど、<br>
       「ずっとしんどい」を何とかしたい40代以降の方へ。
     </p>
-
-    <!-- LINE登録：ヒーロー内の主CTA -->
     <div class="hero-line-block">
       <span class="hero-line-label">LINE無料登録</span>
-      <p class="hero-line-desc">
-        睡眠・体の不調に関するお役立ち情報をLINEでお届けします。
-      </p>
+      <p class="hero-line-desc">睡眠・体の不調に関するお役立ち情報をLINEでお届けします。</p>
       <ul class="hero-line-contents">
         <li>夜中に目が覚める原因と体のつながり</li>
         <li>40代以降の「疲れが取れない」を整えるヒント</li>
-       
       </ul>
-      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line">
-        LINEで無料登録する →
-      </a>
+      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line">LINEで無料登録する →</a>
     </div>
-
-    <!-- 副導線：予約はテキストリンク -->
     <div class="hero-sub-link">
-      <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank">
-        すぐに体験を予約したい方はこちら（初回60分 ¥8,000）
-      </a>
+      <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank">すぐに体験を予約したい方はこちら（初回60分 ¥8,000）</a>
     </div>
   </div>
 </section>
 
-<!-- =====================
-     SELF CHECK
-===================== -->
+<!-- SELF CHECK -->
 <section class="section-check">
   <div class="check-container">
     <span class="check-label">30秒セルフチェック</span>
-    <h2 class="check-heading">
-      あなたの「眠れない」は<br>体のサインかもしれません
-    </h2>
+    <h2 class="check-heading">あなたの「眠れない」は<br>体のサインかもしれません</h2>
     <div class="check-items">
       <div class="check-q" onclick="toggleCheck(this)">
         <div class="check-q-box"></div>
@@ -922,8 +795,7 @@
       </div>
       <div class="check-q" onclick="toggleCheck(this)">
         <div class="check-q-box"></div>
-        <span class="check-q-text">起きたとき、寝た気がしない
-        </span>
+        <span class="check-q-text">起きたとき、寝た気がしない</span>
       </div>
       <div class="check-q" onclick="toggleCheck(this)">
         <div class="check-q-box"></div>
@@ -938,150 +810,167 @@
         <span class="check-q-text">「年齢のせい」と言われたが、納得できていない</span>
       </div>
     </div>
-
     <div class="check-result" id="checkResult">
       <div class="check-result-title">
         2つ以上当てはまる方は、<br>「睡眠だけの問題」ではなく、<br>体の緊張が影響している可能性があります。
       </div>
-      <div class="check-result-body">
-        まずは体と睡眠のつながりについて、LINEでお役立ち情報をお届けします。<br>
-        相談だけでも大丈夫です。
-      </div>
+      <div class="check-result-body">まずは体と睡眠のつながりについて、LINEでお役立ち情報をお届けします。</div>
     </div>
-
     <div class="check-cta">
       <p class="check-cta-line-label">まず情報を受け取りたい方へ</p>
-      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:inline-flex;padding:16px 36px;">
-        LINEで無料登録する →
-      </a>
-      <p class="check-cta-sub">
-        睡眠・体のお役立ち情報を配信。解除はいつでも可能です。
-      </p>
+      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:inline-flex;padding:16px 36px;">LINEで無料登録する →</a>
+      <p class="check-cta-sub">睡眠・体のお役立ち情報を配信。解除はいつでも可能です。</p>
     </div>
   </div>
 </section>
 
 <!-- =====================
-     PROBLEM
+     REASON（01〜03）
+     旧：こんな症状、ありませんか？
 ===================== -->
-<section class="section-problem">
+<section class="section-reason">
   <div class="container">
-    <span class="section-label">こんな症状、ありませんか？</span>
+    <span class="section-label">なぜ体へのアプローチが、眠りに関係するのか</span>
     <h2 class="section-title">
-      40代からの「眠れない」には、<br>見落とされがちな原因があります。
+      眠れない原因は、<br>体の中にあることがあります。
     </h2>
-    <div class="checklist">
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>夜中の2〜3時に目が覚めて、そのまま眠れなくなる</span>
+    <p class="section-intro">
+      眠れない原因を「ストレス」や「年齢」で片づけられてきた方は多いと思います。ただ、体の状態から見ると、別の説明ができることがあります。
+    </p>
+
+    <div class="reason-list">
+
+      <div class="reason-item">
+        <div class="reason-num">01</div>
+        <div class="reason-content">
+          <h3>寝返りが打てないと、<br>体は回復できない</h3>
+          <p>
+            睡眠中、人は一晩に20〜30回ほど寝返りを打っています。これには理由があります。血流を良くする、筋肉や関節への負担を分散する、体温を調節する。寝返りは、体が睡眠中に自分を回復させるための動きです。<br><br>
+            ところが、筋肉が緊張して体が硬くなると、この寝返りがうまく打てなくなります。同じ部位に圧迫が集中し、血流が滞り、体はさらに硬くなる。これが「寝ているのに疲れている」「朝から体が重い」という感覚の背景にあることがあります。
+          </p>
+        </div>
       </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>寝返りを打つたびに体が痛くて、深く眠れない</span>
+
+      <div class="reason-item">
+        <div class="reason-num">02</div>
+        <div class="reason-content">
+          <h3>自律神経が休まないと、<br>眠りは浅くなる</h3>
+          <p>
+            首・肩・背中の筋肉が固まっていると、胸郭の動きが制限されて呼吸が浅くなります。呼吸が浅い状態では、自律神経が「休む」モード（副交感神経）に切り替わりにくくなります。体は横になっていても、神経はまだ「活動」状態のまま。これが夜中に目が覚めやすくなる背景のひとつです。
+          </p>
+        </div>
       </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>朝起きたとき、すでに体が疲れている感覚がある</span>
+
+      <div class="reason-item">
+        <div class="reason-num">03</div>
+        <div class="reason-content">
+          <h3>眠りは「体の状態」で変わる</h3>
+          <p>
+            施術では、関節の動きと筋肉の緊張、呼吸のしやすさを確認しながらアプローチします。眠りを直接コントロールするのではなく、眠りを妨げている体の状態を整えていく、という考え方です。<br><br>
+            体がゆるむことで、自然と「いい眠り」に近づいていきます。
+          </p>
+        </div>
       </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>肩・股関節・背中のどこかが常に張っている</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>「運動不足だから」と言われるが、運動しても変わらない</span>
-      </div>
+
     </div>
 
-    <div class="answer-box">
-      <p class="big-text">
-        眠りの浅さには、<em>体の緊張や呼吸の浅さ、<br>首肩まわりのこわばりが<br>関係していることがあります。</em>
-      </p>
-      <p>
-        関節の動きが硬くなると、筋肉に余分な緊張が生まれ、寝返りのしづらさや呼吸の浅さにつながることがあります。<br><br>
-        眠りそのものを直接変えるのではなく、眠りを妨げている体の緊張をほどいていく、という考え方です。<br><br>
-        <span style="color:rgba(255,255,255,0.4);font-size:12px;">※効果には個人差があります。医療行為ではありません。</span>
-      </p>
-    </div>
+    <p class="reason-note">※ 効果には個人差があります。医療行為ではありません。</p>
   </div>
 </section>
 
-<!-- =====================
-     MID CTA 1（LINE登録主軸）
-===================== -->
+<!-- MID CTA 1 -->
 <div class="mid-cta">
   <div class="mid-cta-inner">
     <span class="mid-cta-badge">LINE無料登録</span>
-    <div class="mid-cta-title">
-      眠りと体を整えるヒントを<br>LINEでお届けします
-    </div>
-
+    <div class="mid-cta-title">眠りと体を整えるヒントを<br>LINEでお届けします</div>
     <div class="mid-cta-contents">
       <div class="mid-cta-contents-title">配信コンテンツ（例）</div>
       <ul>
         <li>夜中に目が覚める原因と体のつながり</li>
         <li>40代以降の「疲れが取れない」を整えるヒント</li>
-       
         <li>体験施術に関する案内（希望者のみ）</li>
       </ul>
     </div>
-
-    <div class="mid-cta-sub">
-      情報だけの登録で大丈夫です。<br>
-      解除はいつでも可能です。
-    </div>
-
-    <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:flex;margin-bottom:14px;">
-      LINEで無料登録する →
-    </a>
-
-    <!-- 副導線：予約 -->
+    <div class="mid-cta-sub">情報だけの登録で大丈夫です。解除はいつでも可能です。</div>
+    <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:flex;margin-bottom:14px;">LINEで無料登録する →</a>
     <div class="mid-cta-divider">▽ すぐに体験したい方はこちら</div>
-    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve" style="display:flex;">
-      体験を予約する（初回60分 ¥8,000） →
-    </a>
+    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve" style="display:flex;">体験を予約する（初回60分 ¥8,000） →</a>
     <p class="mid-cta-reserve-note">五反田・自由が丘エリア対応</p>
   </div>
 </div>
 
 <!-- =====================
-     WHY
+     COMPARISON
+     旧：WHY（このアプローチの考え方）
 ===================== -->
-<section class="section-why">
+<section class="section-compare">
   <div class="container">
-    <span class="section-label">このアプローチの考え方</span>
+    <span class="section-label">他のアプローチとの違い</span>
     <h2 class="section-title">
-      「眠れない理由」から一緒に整理します。
+      なぜリメディアルセラピーなのか。
     </h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-number">01</div>
-        <div class="why-title">まず「眠れない理由」を<br>一緒に整理します</div>
-        <div class="why-body">睡眠時間だけでなく、首肩の張り、寝返りのしやすさ、呼吸の浅さなどを確認します。話すだけで構いません。</div>
-      </div>
-      <div class="why-card">
-        <div class="why-number">02</div>
-        <div class="why-title">ただ緩めるだけでなく、<br>体の使い方まで見ます</div>
-        <div class="why-body">その場しのぎではなく、緊張が戻りにくい状態を目指します。関節・筋肉・呼吸の連動を確認しながらアプローチします。</div>
-      </div>
-      <div class="why-card">
-        <div class="why-number">03</div>
-        <div class="why-title">無理なセルフケアは<br>増やしません</div>
-        <div class="why-body">「これだけやってください」という、続けやすいことを2つだけお伝えします。難しいことは提案しません。</div>
-      </div>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:18%;text-align:left;"></th>
+            <th class="col-us">
+              <span class="col-us-badge">当サロン</span>
+              リメディアルセラピー
+            </th>
+            <th>薬<br><span style="font-size:11px;font-weight:400;color:rgba(92,61,46,0.5);">睡眠薬・市販薬</span></th>
+            <th>オイルマッサージ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">主な目的</td>
+            <td class="col-us">体の緊張をほどく</td>
+            <td>不眠を改善する</td>
+            <td>疲れを癒す</td>
+          </tr>
+          <tr>
+            <td class="row-label">眠りへの<br>アプローチ</td>
+            <td class="col-us">筋肉・関節・呼吸から<br>自律神経を整える</td>
+            <td>脳の働きに<br>直接作用する</td>
+            <td>一時的な<br>リラックス</td>
+          </tr>
+          <tr>
+            <td class="row-label">即効性</td>
+            <td class="col-us">個人差あり</td>
+            <td>比較的早い</td>
+            <td>その日のみ</td>
+          </tr>
+          <tr>
+            <td class="row-label">持続性</td>
+            <td class="col-us">体の状態を変えていくため、<br>続けるほど定着しやすい</td>
+            <td>服用中心のため、<br>やめると戻りやすい</td>
+            <td>一時的</td>
+          </tr>
+          <tr>
+            <td class="row-label">体への負担</td>
+            <td class="col-us">ほぼなし</td>
+            <td>眠気・依存性などの<br>可能性あり</td>
+            <td>ほぼなし</td>
+          </tr>
+          <tr>
+            <td class="row-label">向いている方</td>
+            <td class="col-us">体から根本的に<br>整えたい方</td>
+            <td>すぐに症状を<br>抑えたい方</td>
+            <td>疲れを<br>癒したい方</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- =====================
-     FLOW
-===================== -->
+<!-- FLOW -->
 <section class="section-flow">
   <div class="container">
     <span class="section-label">当日の流れ</span>
-    <h2 class="section-title">
-      当日は、こんな流れで進みます。
-    </h2>
+    <h2 class="section-title">当日は、こんな流れで進みます。</h2>
     <div style="margin-bottom:36px;overflow:hidden;">
       <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/キュア_DSC6245-scaled.jpg" alt="施術風景" style="width:100%;max-height:360px;object-fit:cover;object-position:center 30%;">
     </div>
@@ -1129,15 +1018,11 @@
   </div>
 </section>
 
-<!-- =====================
-     BEFORE/AFTER
-===================== -->
+<!-- BEFORE/AFTER -->
 <section class="section-result">
   <div class="container">
     <span class="section-label">体が変わると</span>
-    <h2 class="section-title">
-      体が変わると、<br>眠りやすさにも影響します。
-    </h2>
+    <h2 class="section-title">体が変わると、<br>眠りやすさにも影響します。</h2>
     <div style="text-align:center;margin-top:36px;">
       <p style="font-size:11px;letter-spacing:0.3em;color:var(--warm-terracotta);margin-bottom:14px;">BEFORE / AFTER</p>
       <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_00000000c00c7209ac897560c940c7a7.png" alt="施術前後の姿勢変化" style="max-width:460px;width:100%;display:inline-block;">
@@ -1148,33 +1033,20 @@
   </div>
 </section>
 
-<!-- =====================
-     MID CTA 2
-===================== -->
+<!-- MID CTA 2 -->
 <div class="mid-cta">
   <div class="mid-cta-inner">
     <span class="mid-cta-badge">LINE無料登録</span>
-    <div class="mid-cta-title">
-      まずは情報から。<br>登録は無料です。
-    </div>
-    <div class="mid-cta-sub">
-      「すぐ予約」より「まず知りたい」方へ。<br>
-      睡眠と体のつながりについて、LINEでお伝えします。
-    </div>
-    <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:flex;margin-bottom:14px;">
-      LINEで無料登録する →
-    </a>
+    <div class="mid-cta-title">まずは情報から。<br>登録は無料です。</div>
+    <div class="mid-cta-sub">「すぐ予約」より「まず知りたい」方へ。<br>睡眠と体のつながりについて、LINEでお伝えします。</div>
+    <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:flex;margin-bottom:14px;">LINEで無料登録する →</a>
     <div class="mid-cta-divider">▽ すぐに体験したい方はこちら</div>
-    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve" style="display:flex;">
-      体験を予約する（初回60分 ¥8,000） →
-    </a>
+    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve" style="display:flex;">体験を予約する（初回60分 ¥8,000） →</a>
     <p class="mid-cta-reserve-note">五反田・自由が丘エリア対応</p>
   </div>
 </div>
 
-<!-- =====================
-     PROFILE
-===================== -->
+<!-- PROFILE -->
 <section class="section-profile">
   <div class="profile-inner">
     <div class="profile-img-box">
@@ -1197,21 +1069,12 @@
   </div>
 </section>
 
-<!-- =====================
-     FINAL CTA（LINE登録主軸）
-===================== -->
+<!-- FINAL CTA -->
 <section class="section-final-cta">
   <div class="final-cta-inner">
     <span class="cta-kicker">まずは気軽に登録してみてください</span>
-    <h2 class="final-cta-title">
-      睡眠・体のお役立ち情報を<br>LINEで受け取る
-    </h2>
-    <p class="final-cta-sub">
-      「すぐ予約」より「まず知りたい」方へ。<br>
-      情報だけの登録でも大丈夫です。
-    </p>
-
-    <!-- LINE登録の内容説明 -->
+    <h2 class="final-cta-title">睡眠・体のお役立ち情報を<br>LINEで受け取る</h2>
+    <p class="final-cta-sub">「すぐ予約」より「まず知りたい」方へ。<br>情報だけの登録でも大丈夫です。</p>
     <div class="line-contents-box">
       <div class="line-contents-box-title">登録後にお届けする内容（例）</div>
       <ul>
@@ -1221,14 +1084,9 @@
         <li>体験施術に関する案内（希望者のみ）</li>
       </ul>
     </div>
-
     <div class="final-cta-btns">
-      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line">
-        LINEで無料登録する →
-      </a>
+      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line">LINEで無料登録する →</a>
     </div>
-
-    <!-- LINE登録後の案内 -->
     <div class="line-reply-box">
       <strong>登録後のご案内</strong>
       登録いただくと自動でご案内が届きます。<br>
@@ -1237,22 +1095,13 @@
       ② いつ頃から<br>
       ③ 希望エリア（五反田 / 自由が丘）
     </div>
-
-    <!-- 副導線：予約 -->
     <div class="reserve-section">
       <span class="reserve-section-label">▽ すぐに体験を予約したい方はこちら</span>
       <div class="reserve-btns">
-        <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve btn-reserve-dark">
-          体験を予約する（五反田エリア）初回60分 ¥8,000 →
-        </a>
-        <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="btn-reserve btn-reserve-dark">
-          体験を予約する（自由が丘エリア）初回60分 ¥8,000 →
-        </a>
+        <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve btn-reserve-dark">体験を予約する（五反田エリア）初回60分 ¥8,000 →</a>
+        <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="btn-reserve btn-reserve-dark">体験を予約する（自由が丘エリア）初回60分 ¥8,000 →</a>
       </div>
-      <p class="reserve-note">
-        相談だけでも大丈夫です。<br>
-        合わない場合は体験のみで構いません。
-      </p>
+      <p class="reserve-note">相談だけでも大丈夫です。合わない場合は体験のみで構いません。</p>
     </div>
   </div>
 </section>
