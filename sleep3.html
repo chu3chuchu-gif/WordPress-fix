@@ -563,6 +563,47 @@
     font-weight: 400;
   }
 
+  .price-box {
+    margin-top: 26px;
+    background: #fff;
+    border: 1px solid rgba(92,61,46,0.14);
+    padding: 20px 18px;
+  }
+
+  .price-box-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--warm-terracotta);
+    margin-bottom: 8px;
+  }
+
+  .price-box-main {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    color: var(--deep-brown);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .price-box-main span {
+    font-size: 14px;
+    color: var(--medium-brown);
+    margin: 0 3px;
+  }
+
+  .price-box-detail {
+    font-size: 12px;
+    color: var(--medium-brown);
+    line-height: 1.8;
+  }
+
+  .price-box-area {
+    margin-top: 8px;
+    font-size: 11px;
+    color: rgba(92,61,46,0.72);
+    letter-spacing: 0.08em;
+  }
+
   /* FLOW */
   .section-flow { padding: 80px 40px; background: #f5ede4; }
 
@@ -817,9 +858,8 @@
       <div class="check-result-body">まずは体と睡眠のつながりについて、LINEでお役立ち情報をお届けします。</div>
     </div>
     <div class="check-cta">
-      <p class="check-cta-line-label">まず情報を受け取りたい方へ</p>
-      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:inline-flex;padding:16px 36px;">LINEで無料登録する →</a>
-      <p class="check-cta-sub">睡眠・体のお役立ち情報を配信。解除はいつでも可能です。</p>
+      <p class="check-cta-line-label">このあと原因と対策を、順番にご案内します</p>
+      <p class="check-cta-sub">途中で気になったは、中盤のLINE案内からいつでも登録できます。</p>
     </div>
   </div>
 </section>
@@ -919,7 +959,7 @@
               <span class="col-us-badge">当サロン</span>
               リメディアルセラピー
             </th>
-            <th>薬<br><span style="font-size:11px;font-weight:400;color:rgba(92,61,46,0.5);">睡眠薬・市販薬</span></th>
+            <th>薬<br><span style="font-size:11px;font-weight:400;color:rgba(92,61,46,0.5);">睡眠・市販薬</span></th>
             <th>オイルマッサージ</th>
           </tr>
         </thead>
@@ -944,14 +984,15 @@
           </tr>
           <tr>
             <td class="row-label">持続性</td>
-            <td class="col-us">体の状態を変えていくため、<br>続けるほど定着しやすい</td>
-            <td>服用中心のため、<br>やめると戻りやすい</td>
+            <td class="col-us">続けるほど、体が変わる
+            </td>
+            <td>服用中心、<br>やめると戻りやすい</td>
             <td>一時的</td>
           </tr>
           <tr>
             <td class="row-label">体への負担</td>
             <td class="col-us">ほぼなし</td>
-            <td>眠気・依存性などの<br>可能性あり</td>
+            <td>眠気・依存性などの可能性</td>
             <td>ほぼなし</td>
           </tr>
           <tr>
@@ -962,6 +1003,12 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="price-box">
+      <div class="price-box-label">初回体験プラン</div>
+      <div class="price-box-main">初回体験 <span>60分</span> 8,000円</div>
+      <p class="price-box-detail">内容：状態チェック＋施術＋セルフケア</p>
+      <p class="price-box-area">対応エリア：五反田 / 自由が丘</p>
     </div>
   </div>
 </section>
@@ -996,13 +1043,6 @@
           <p>その日の体の状態に合わせてアプローチします。強く揉み続けるような施術ではありません。</p>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-content">
-          <h3>アフターケア（セルフケアを2つだけ）</h3>
-          <p>「これだけやってください」という、続けやすい2つのセルフケアをお伝えします。</p>
-        </div>
-      </div>
     </div>
     <div class="flow-reassure">
       <p>
@@ -1032,19 +1072,6 @@
     </div>
   </div>
 </section>
-
-<!-- MID CTA 2 -->
-<div class="mid-cta">
-  <div class="mid-cta-inner">
-    <span class="mid-cta-badge">LINE無料登録</span>
-    <div class="mid-cta-title">まずは情報から。<br>登録は無料です。</div>
-    <div class="mid-cta-sub">「すぐ予約」より「まず知りたい」方へ。<br>睡眠と体のつながりについて、LINEでお伝えします。</div>
-    <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:flex;margin-bottom:14px;">LINEで無料登録する →</a>
-    <div class="mid-cta-divider">▽ すぐに体験したい方はこちら</div>
-    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve" style="display:flex;">体験を予約する（初回60分 ¥8,000） →</a>
-    <p class="mid-cta-reserve-note">五反田・自由が丘エリア対応</p>
-  </div>
-</div>
 
 <!-- PROFILE -->
 <section class="section-profile">
