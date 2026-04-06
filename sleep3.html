@@ -198,49 +198,6 @@
     letter-spacing: 0.04em;
   }
 
-  /* =====================
-     TRUST STRIP（信頼要素・早期表示）
-  ===================== */
-  .trust-strip {
-    background: var(--ivory);
-    border-bottom: 1px solid rgba(92,61,46,0.1);
-    padding: 28px 40px;
-  }
-
-  .trust-strip-inner {
-    max-width: 880px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .trust-strip-img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    flex-shrink: 0;
-    border: 2px solid rgba(212,169,106,0.3);
-  }
-
-  .trust-strip-text { flex: 1; }
-
-  .trust-strip-name {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--deep-brown);
-    margin-bottom: 4px;
-  }
-
-  .trust-strip-creds {
-    font-size: 12px;
-    color: var(--medium-brown);
-    line-height: 1.75;
-  }
-
   /* BUTTONS */
   .btn-line {
     display: flex;
@@ -365,7 +322,9 @@
   .check-cta-line-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; margin-bottom: 8px; }
   .check-cta-sub { font-size: 11px; color: rgba(255,255,255,0.32); margin-top: 12px; line-height: 1.8; letter-spacing: 0.06em; }
 
-  /* REASON */
+  /* =====================
+     REASON（01〜03）+ Before/After統合
+  ===================== */
   .section-reason {
     padding: 96px 40px;
     background: var(--ivory);
@@ -398,13 +357,6 @@
     line-height: 1.78;
     margin-bottom: 18px;
     color: var(--deep-brown);
-  }
-
-  .section-intro {
-    font-size: 14px;
-    color: var(--medium-brown);
-    line-height: 2.1;
-    margin-bottom: 56px;
   }
 
   .reason-list { display: flex; flex-direction: column; gap: 0; }
@@ -442,6 +394,38 @@
     font-size: 14px;
     color: var(--medium-brown);
     line-height: 2.2;
+  }
+
+  /* Before/After：03の直後に統合 */
+  .before-after-block {
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(92,61,46,0.1);
+    text-align: center;
+  }
+
+  .before-after-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--warm-terracotta);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .before-after-block img {
+    max-width: 460px;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .before-after-caption {
+    font-size: 13px;
+    color: var(--medium-brown);
+    margin-top: 18px;
+    line-height: 2;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .reason-note {
@@ -506,6 +490,46 @@
   .mid-cta-sub { font-size: 11px; color: rgba(255,255,255,0.38); margin-bottom: 20px; line-height: 1.9; }
   .mid-cta-divider { font-size: 10px; color: rgba(255,255,255,0.22); letter-spacing: 0.2em; margin: 18px 0 10px; }
   .mid-cta-reserve-note { font-size: 11px; color: rgba(255,255,255,0.32); margin-top: 8px; line-height: 1.7; }
+
+  /* =====================
+     PROFILE（比較表の前に移動）
+  ===================== */
+  .section-profile { padding: 80px 40px; background: var(--deep-brown); color: var(--ivory); }
+
+  .profile-inner {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .profile-img-box { position: relative; }
+
+  .profile-img-box::before {
+    content: '';
+    position: absolute;
+    top: 14px; left: 14px; right: -14px; bottom: -14px;
+    border: 1px solid rgba(212,169,106,0.22);
+    pointer-events: none;
+  }
+
+  .profile-label { font-size: 10px; letter-spacing: 0.42em; color: var(--pale-gold); text-transform: uppercase; margin-bottom: 12px; }
+  .profile-name { font-family: 'Shippori Mincho', serif; font-size: 25px; font-weight: 700; margin-bottom: 24px; }
+  .profile-text { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 2.2; }
+
+  .credential-list { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; }
+
+  .credential-item {
+    font-size: 12px;
+    color: #cccccc;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.65;
+  }
+
+  .credential-item::before { content: '—'; position: absolute; left: 0; color: var(--pale-gold); }
 
   /* COMPARISON */
   .section-compare { padding: 80px 40px; background: var(--warm-white); }
@@ -627,29 +651,12 @@
 
   .flow-reassure p { font-size: 12px; color: var(--medium-brown); line-height: 2; }
 
-  /* BEFORE/AFTER */
-  .section-result { padding: 80px 40px; background: var(--ivory); }
+  /* FAQ */
+  .section-faq { padding: 80px 40px; background: var(--warm-white); }
 
-  /* =====================
-     FAQ
-  ===================== */
-  .section-faq {
-    padding: 80px 40px;
-    background: var(--warm-white);
-  }
+  .faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 0; }
 
-  .faq-list {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(92,61,46,0.1);
-    overflow: hidden;
-  }
-
+  .faq-item { border-bottom: 1px solid rgba(92,61,46,0.1); overflow: hidden; }
   .faq-item:first-child { border-top: 1px solid rgba(92,61,46,0.1); }
 
   .faq-q {
@@ -661,93 +668,16 @@
     user-select: none;
   }
 
-  .faq-q-icon {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--warm-terracotta);
-    flex-shrink: 0;
-    line-height: 1.6;
-  }
-
-  .faq-q-text {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--deep-brown);
-    line-height: 1.65;
-    flex: 1;
-  }
-
-  .faq-toggle {
-    font-size: 20px;
-    color: var(--warm-terracotta);
-    flex-shrink: 0;
-    line-height: 1.5;
-    transition: transform 0.22s;
-  }
-
+  .faq-q-icon { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 800; color: var(--warm-terracotta); flex-shrink: 0; line-height: 1.6; }
+  .faq-q-text { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 700; color: var(--deep-brown); line-height: 1.65; flex: 1; }
+  .faq-toggle { font-size: 20px; color: var(--warm-terracotta); flex-shrink: 0; line-height: 1.5; transition: transform 0.22s; }
   .faq-item.open .faq-toggle { transform: rotate(45deg); }
 
-  .faq-a {
-    display: none;
-    padding: 0 0 22px 36px;
-  }
-
+  .faq-a { display: none; padding: 0 0 22px 36px; }
   .faq-item.open .faq-a { display: block; }
 
-  .faq-a-icon {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--line-green);
-    margin-bottom: 6px;
-    display: block;
-  }
-
-  .faq-a p {
-    font-size: 14px;
-    color: var(--medium-brown);
-    line-height: 2.1;
-  }
-
-  /* PROFILE */
-  .section-profile { padding: 96px 40px; background: var(--deep-brown); color: var(--ivory); }
-
-  .profile-inner {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 60px;
-    align-items: center;
-    max-width: 880px;
-    margin: 0 auto;
-  }
-
-  .profile-img-box { position: relative; }
-
-  .profile-img-box::before {
-    content: '';
-    position: absolute;
-    top: 14px; left: 14px; right: -14px; bottom: -14px;
-    border: 1px solid rgba(212,169,106,0.22);
-    pointer-events: none;
-  }
-
-  .profile-label { font-size: 10px; letter-spacing: 0.42em; color: var(--pale-gold); text-transform: uppercase; margin-bottom: 12px; }
-  .profile-name { font-family: 'Shippori Mincho', serif; font-size: 25px; font-weight: 700; margin-bottom: 24px; }
-  .profile-text { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 2.2; }
-
-  .credential-list { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; }
-
-  .credential-item {
-    font-size: 12px;
-    color: #cccccc;
-    padding-left: 16px;
-    position: relative;
-    line-height: 1.65;
-  }
-
-  .credential-item::before { content: '—'; position: absolute; left: 0; color: var(--pale-gold); }
+  .faq-a-icon { font-family: 'Shippori Mincho', serif; font-size: 13px; font-weight: 700; color: var(--line-green); margin-bottom: 6px; display: block; }
+  .faq-a p { font-size: 14px; color: var(--medium-brown); line-height: 2.1; }
 
   /* FINAL CTA */
   .section-final-cta { padding: 96px 40px; background: var(--ivory); text-align: center; }
@@ -811,9 +741,8 @@
 
   @media (max-width: 768px) {
     .hero-inner { padding: 68px 24px 52px; }
-    .trust-strip { padding: 22px; }
     .section-reason, .section-compare, .section-faq, .section-flow,
-    .section-result, .section-profile, .section-final-cta { padding-left: 22px; padding-right: 22px; }
+    .section-profile, .section-final-cta { padding-left: 22px; padding-right: 22px; }
     .section-check, .mid-cta { padding-left: 22px; padding-right: 22px; }
     .reason-item { grid-template-columns: 48px 1fr; gap: 16px; }
     .reason-num { font-size: 36px; }
@@ -863,19 +792,6 @@
   </div>
 </section>
 
-<!-- =====================
-     TRUST STRIP（Hero直下・信頼要素の早期表示）
-===================== -->
-<div class="trust-strip">
-  <div class="trust-strip-inner">
-    <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/DSC6094.jpgキュア-scaled.jpg" alt="織田朋奈" class="trust-strip-img">
-    <div class="trust-strip-text">
-      <div class="trust-strip-name">担当セラピスト　織田 朋奈</div>
-      <div class="trust-strip-creds">セラピスト歴10年以上　／　延べ数百名担当　／　完全予約制・個室</div>
-    </div>
-  </div>
-</div>
-
 <!-- SELF CHECK -->
 <section class="section-check">
   <div class="check-container">
@@ -916,21 +832,24 @@
   </div>
 </section>
 
-<!-- REASON（01〜03） -->
+<!-- =====================
+     REASON（01〜03）+ Before/After統合
+     流れ：01→02→03→Before/After写真→注記
+===================== -->
 <section class="section-reason">
   <div class="container">
     <span class="section-label">なぜ体へのアプローチが、眠りに関係するのか</span>
     <h2 class="section-title">眠れない原因は、<br>体の中にあることがあります。</h2>
-    <p class="section-intro">眠れない原因を「ストレス」や「年齢」で片づけられてきた方は多いと思います。ただ、体の状態から見ると、別の説明ができることがあります。</p>
 
     <div class="reason-list">
       <div class="reason-item">
         <div class="reason-num">01</div>
         <div class="reason-content">
           <h3>寝返りが打てないと、<br>体は回復できない</h3>
-          <p>睡眠中、人は一晩に20〜30回ほど寝返りを打っています。これには理由があります。血流を良くする、筋肉や関節への負担を分散する、体温を調節する。寝返りは、体が睡眠中に自分を回復させるための動きです。<br><br>ところが、筋肉が緊張して体が硬くなると、この寝返りがうまく打てなくなります。同じ部位に圧迫が集中し、血流が滞り、体はさらに硬くなる。これが「寝ているのに疲れている」「朝から体が重い」という感覚の背景にあることがあります。</p>
+          <p>睡眠中、人は一晩に20〜30回ほど寝返りを打っています。これには理由があります。血流を良くする、筋肉や関節への負担を分散する、体温を調節する。寝返りは、体が睡眠中に自分を回復させるための動きです。<br><br>ところが、筋肉が緊張して体が硬くなると、この寝返りがうまく打てなくなります。これが「寝ているのに疲れている」「寝た気がしない」という感覚の背景にあることがあります。</p>
         </div>
       </div>
+
       <div class="reason-item">
         <div class="reason-num">02</div>
         <div class="reason-content">
@@ -938,6 +857,7 @@
           <p>首・肩・背中の筋肉が固まっていると、胸郭の動きが制限されて呼吸が浅くなります。呼吸が浅い状態では、自律神経が「休む」モード（副交感神経）に切り替わりにくくなります。体は横になっていても、神経はまだ「活動」状態のまま。これが夜中に目が覚めやすくなる背景のひとつです。</p>
         </div>
       </div>
+
       <div class="reason-item">
         <div class="reason-num">03</div>
         <div class="reason-content">
@@ -947,11 +867,20 @@
       </div>
     </div>
 
+    <!-- Before/After：03の直後に統合 -->
+    <div class="before-after-block">
+      <span class="before-after-label">BEFORE / AFTER</span>
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_00000000c00c7209ac897560c940c7a7.png" alt="施術前後の姿勢変化">
+      <p class="before-after-caption">
+        姿勢や動きが変わると、寝返りのしやすさや首肩まわりの負担も変わります。体を整えることが、結果として"眠りやすい状態"につながることがあります。
+      </p>
+    </div>
+
     <p class="reason-note">※ 効果には個人差があります。医療行為ではありません。</p>
   </div>
 </section>
 
-<!-- MID CTA 1 -->
+<!-- MID CTA -->
 <div class="mid-cta">
   <div class="mid-cta-inner">
     <span class="mid-cta-badge">LINE無料登録</span>
@@ -971,6 +900,31 @@
     <p class="mid-cta-reserve-note">五反田・自由が丘エリア対応</p>
   </div>
 </div>
+
+<!-- =====================
+     PROFILE（比較表の前に移動）
+===================== -->
+<section class="section-profile">
+  <div class="profile-inner">
+    <div class="profile-img-box">
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/DSC6094.jpgキュア-scaled.jpg" alt="織田朋奈" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;">
+    </div>
+    <div>
+      <p class="profile-label">Therapist</p>
+      <h3 class="profile-name">織田 朋奈</h3>
+      <p class="profile-text">
+        肩こり・疲労感・眠りの浅さなど、40代以降の「理由のわからない不調」のご相談を多くいただいてきました。<br><br>
+        「年齢のせい」と言われて諦めかけている方ほど、体へのアプローチで変化を感じていただけることがあります。<br><br>
+        まず動きや姿勢を見て、必要に応じて深部へアプローチしていく考え方を大切にしています。
+      </p>
+      <div class="credential-list">
+        <div class="credential-item">セラピスト歴10年以上</div>
+        <div class="credential-item">延べ数百名のクライアントを担当</div>
+        <div class="credential-item">完全予約制・個室</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- COMPARISON -->
 <section class="section-compare">
@@ -1081,29 +1035,11 @@
   </div>
 </section>
 
-<!-- BEFORE/AFTER -->
-<section class="section-result">
-  <div class="container">
-    <span class="section-label">体が変わると</span>
-    <h2 class="section-title">体が変わると、<br>眠りやすさにも影響します。</h2>
-    <div style="text-align:center;margin-top:36px;">
-      <p style="font-size:11px;letter-spacing:0.3em;color:var(--warm-terracotta);margin-bottom:14px;">BEFORE / AFTER</p>
-      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_00000000c00c7209ac897560c940c7a7.png" alt="施術前後の姿勢変化" style="max-width:460px;width:100%;display:inline-block;">
-      <p style="font-size:13px;color:var(--medium-brown);margin-top:18px;line-height:2;max-width:480px;margin-left:auto;margin-right:auto;">
-        姿勢や動きが変わると、寝返りのしやすさや首肩まわりの負担も変わります。体を整えることが、結果として"眠りやすい状態"につながることがあります。
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- =====================
-     FAQ
-===================== -->
+<!-- FAQ -->
 <section class="section-faq">
   <div class="container">
     <span class="section-label">よくあるご質問</span>
     <h2 class="section-title">気になることは、<br>先に確認してください。</h2>
-
     <div class="faq-list">
 
       <div class="faq-item">
@@ -1178,29 +1114,6 @@
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- PROFILE -->
-<section class="section-profile">
-  <div class="profile-inner">
-    <div class="profile-img-box">
-      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/DSC6094.jpgキュア-scaled.jpg" alt="織田朋奈" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;">
-    </div>
-    <div>
-      <p class="profile-label">Therapist</p>
-      <h3 class="profile-name">織田 朋奈</h3>
-      <p class="profile-text">
-        肩こり・疲労感・眠りの浅さなど、40代以降の「理由のわからない不調」のご相談を多くいただいてきました。<br><br>
-        「年齢のせい」と言われて諦めかけている方ほど、体へのアプローチで変化を感じていただけることがあります。<br><br>
-        まず動きや姿勢を見て、必要に応じて深部へアプローチしていく考え方を大切にしています。
-      </p>
-      <div class="credential-list">
-        <div class="credential-item">セラピスト歴10年以上</div>
-        <div class="credential-item">延べ数百名のクライアントを担当</div>
-        <div class="credential-item">完全予約制・個室</div>
-      </div>
     </div>
   </div>
 </section>
