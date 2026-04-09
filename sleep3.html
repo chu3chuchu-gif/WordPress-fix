@@ -79,7 +79,6 @@
     letter-spacing: 0.06em;
   }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     background: url('https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/ChatGPT-Image-2026年3月3日-19_28_24.png') center center / cover no-repeat;
@@ -198,7 +197,6 @@
     letter-spacing: 0.04em;
   }
 
-  /* BUTTONS */
   .btn-line {
     display: flex;
     align-items: center;
@@ -246,12 +244,7 @@
 
   .btn-reserve-dark:hover { background: rgba(92,61,46,0.06); }
 
-  /* SELF CHECK */
-  .section-check {
-    padding: 64px 40px;
-    background: var(--deep-brown);
-  }
-
+  .section-check { padding: 64px 40px; background: var(--deep-brown); }
   .check-container { max-width: 720px; margin: 0 auto; }
 
   .check-label {
@@ -322,14 +315,7 @@
   .check-cta-line-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; margin-bottom: 8px; }
   .check-cta-sub { font-size: 11px; color: rgba(255,255,255,0.32); margin-top: 12px; line-height: 1.8; letter-spacing: 0.06em; }
 
-  /* =====================
-     REASON（01〜03）+ Before/After統合
-  ===================== */
-  .section-reason {
-    padding: 96px 40px;
-    background: var(--ivory);
-    position: relative;
-  }
+  .section-reason { padding: 96px 40px; background: var(--ivory); position: relative; }
 
   .section-reason::before {
     content: '';
@@ -390,13 +376,8 @@
     margin-bottom: 18px;
   }
 
-  .reason-content p {
-    font-size: 14px;
-    color: var(--medium-brown);
-    line-height: 2.2;
-  }
+  .reason-content p { font-size: 14px; color: var(--medium-brown); line-height: 2.2; }
 
-  /* Before/After：03の直後に統合 */
   .before-after-block {
     margin-top: 48px;
     padding-top: 48px;
@@ -412,11 +393,7 @@
     display: block;
   }
 
-  .before-after-block img {
-    max-width: 460px;
-    width: 100%;
-    display: inline-block;
-  }
+  .before-after-block img { max-width: 460px; width: 100%; display: inline-block; }
 
   .before-after-caption {
     font-size: 13px;
@@ -437,13 +414,7 @@
     border-left: 2px solid rgba(92,61,46,0.15);
   }
 
-  /* MID CTA */
-  .mid-cta {
-    padding: 52px 40px;
-    background: var(--deep-brown);
-    text-align: center;
-  }
-
+  .mid-cta { padding: 52px 40px; background: var(--deep-brown); text-align: center; }
   .mid-cta-inner { max-width: 480px; margin: 0 auto; }
 
   .mid-cta-badge {
@@ -491,9 +462,6 @@
   .mid-cta-divider { font-size: 10px; color: rgba(255,255,255,0.22); letter-spacing: 0.2em; margin: 18px 0 10px; }
   .mid-cta-reserve-note { font-size: 11px; color: rgba(255,255,255,0.32); margin-top: 8px; line-height: 1.7; }
 
-  /* =====================
-     PROFILE（比較表の前に移動）
-  ===================== */
   .section-profile { padding: 80px 40px; background: var(--deep-brown); color: var(--ivory); }
 
   .profile-inner {
@@ -531,20 +499,11 @@
 
   .credential-item::before { content: '—'; position: absolute; left: 0; color: var(--pale-gold); }
 
-  /* COMPARISON */
   .section-compare { padding: 80px 40px; background: var(--warm-white); }
 
-  .compare-table-wrap {
-    margin-top: 40px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+  .compare-table-wrap { margin-top: 40px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-  .compare-table {
-    width: 100%;
-    min-width: 560px;
-    border-collapse: collapse;
-  }
+  .compare-table { width: 100%; min-width: 560px; border-collapse: collapse; }
 
   .compare-table thead th {
     padding: 16px 20px;
@@ -573,7 +532,7 @@
   }
 
   .compare-table td.row-label {
-    padding: 20px 20px;
+    padding: 20px;
     font-size: 13px;
     font-weight: 700;
     color: var(--deep-brown);
@@ -584,7 +543,7 @@
   }
 
   .compare-table td {
-    padding: 20px 20px;
+    padding: 20px;
     font-size: 13px;
     color: var(--medium-brown);
     text-align: center;
@@ -603,22 +562,14 @@
 
   .compare-table tr:last-child td.col-us { border-bottom: 2px solid var(--warm-terracotta); }
 
-  .price-box {
-    margin-top: 26px;
-    background: #fff;
-    border: 1px solid rgba(92,61,46,0.14);
-    padding: 20px 18px;
-  }
-
+  .price-box { margin-top: 26px; background: #fff; border: 1px solid rgba(92,61,46,0.14); padding: 20px 18px; }
   .price-box-label { font-size: 10px; letter-spacing: 0.18em; color: var(--warm-terracotta); margin-bottom: 8px; }
   .price-box-main { font-family: 'Shippori Mincho', serif; font-size: 22px; color: var(--deep-brown); line-height: 1.5; margin-bottom: 8px; }
   .price-box-main span { font-size: 14px; color: var(--medium-brown); margin: 0 3px; }
   .price-box-detail { font-size: 12px; color: var(--medium-brown); line-height: 1.8; }
   .price-box-area { margin-top: 8px; font-size: 11px; color: rgba(92,61,46,0.72); letter-spacing: 0.08em; }
 
-  /* FLOW */
   .section-flow { padding: 80px 40px; background: #f5ede4; }
-
   .flow-steps { display: flex; flex-direction: column; margin-top: 44px; }
 
   .flow-step {
@@ -642,20 +593,11 @@
   .flow-content h3 { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 700; margin-bottom: 7px; color: #1a1a1a; }
   .flow-content p { font-size: 13px; color: #3a3a3a; line-height: 2; }
 
-  .flow-reassure {
-    margin-top: 28px;
-    padding: 18px 22px;
-    background: rgba(92,61,46,0.06);
-    border-left: 3px solid rgba(92,61,46,0.2);
-  }
-
+  .flow-reassure { margin-top: 28px; padding: 18px 22px; background: rgba(92,61,46,0.06); border-left: 3px solid rgba(92,61,46,0.2); }
   .flow-reassure p { font-size: 12px; color: var(--medium-brown); line-height: 2; }
 
-  /* FAQ */
   .section-faq { padding: 80px 40px; background: var(--warm-white); }
-
   .faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 0; }
-
   .faq-item { border-bottom: 1px solid rgba(92,61,46,0.1); overflow: hidden; }
   .faq-item:first-child { border-top: 1px solid rgba(92,61,46,0.1); }
 
@@ -672,14 +614,11 @@
   .faq-q-text { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 700; color: var(--deep-brown); line-height: 1.65; flex: 1; }
   .faq-toggle { font-size: 20px; color: var(--warm-terracotta); flex-shrink: 0; line-height: 1.5; transition: transform 0.22s; }
   .faq-item.open .faq-toggle { transform: rotate(45deg); }
-
   .faq-a { display: none; padding: 0 0 22px 36px; }
   .faq-item.open .faq-a { display: block; }
-
   .faq-a-icon { font-family: 'Shippori Mincho', serif; font-size: 13px; font-weight: 700; color: var(--line-green); margin-bottom: 6px; display: block; }
   .faq-a p { font-size: 14px; color: var(--medium-brown); line-height: 2.1; }
 
-  /* FINAL CTA */
   .section-final-cta { padding: 96px 40px; background: var(--ivory); text-align: center; }
   .final-cta-inner { max-width: 560px; margin: 0 auto; }
 
@@ -711,8 +650,8 @@
 
   .line-contents-box ul li::before { content: '▸'; position: absolute; left: 0; color: var(--line-green); font-size: 11px; }
 
-  .final-cta-btns { display: flex; flex-direction: column; gap: 10px; }
-  .final-cta-btns .btn-line { padding: 20px 28px; font-size: 17px; }
+  .final-cta-btns { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .final-cta-btns .btn-line { padding: 20px 28px; font-size: 17px; width: 100%; }
 
   .reserve-section { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(92,61,46,0.12); text-align: center; }
   .reserve-section-label { font-size: 11px; color: rgba(92,61,46,0.45); letter-spacing: 0.16em; margin-bottom: 12px; display: block; }
@@ -755,11 +694,11 @@
 
 <!-- STICKY BAR -->
 <div class="sticky-bar">
-  <a href="https://lin.ee/XXXXXXX" target="_blank" class="sticky-btn-line">
+  <a href="https://lin.ee/668VcBa" target="_blank" class="sticky-btn-line">
     <span class="sticky-btn-label">LINEで睡眠情報を受け取る</span>
     <span class="sticky-btn-sub">無料・解除いつでもOK</span>
   </a>
-  <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="sticky-btn-reserve">
+  <a href="https://remedialtherapy.jp/reserve/" target="_blank" class="sticky-btn-reserve">
     <span class="sticky-btn-label">体験予約する</span>
     <span class="sticky-btn-sub">初回 ¥8,000</span>
   </a>
@@ -784,10 +723,13 @@
         <li>夜中に目が覚める原因と体のつながり</li>
         <li>40代以降の「疲れが取れない」を整えるヒント</li>
       </ul>
-      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line">LINEで無料登録する →</a>
+      <a href="https://lin.ee/668VcBa" target="_blank" class="btn-line">
+        <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="26" border="0">
+        LINEで無料登録する →
+      </a>
     </div>
     <div class="hero-sub-link">
-      <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank">すぐに体験を予約したい方はこちら（初回60分 ¥8,000）</a>
+      <a href="https://remedialtherapy.jp/reserve/" target="_blank">すぐに体験を予約したい方はこちら（初回60分 ¥8,000）</a>
     </div>
   </div>
 </section>
@@ -832,10 +774,7 @@
   </div>
 </section>
 
-<!-- =====================
-     REASON（01〜03）+ Before/After統合
-     流れ：01→02→03→Before/After写真→注記
-===================== -->
+<!-- REASON 01〜03 + Before/After -->
 <section class="section-reason">
   <div class="container">
     <span class="section-label">なぜ体へのアプローチが、眠りに関係するのか</span>
@@ -867,7 +806,6 @@
       </div>
     </div>
 
-    <!-- Before/After：03の直後に統合 -->
     <div class="before-after-block">
       <span class="before-after-label">BEFORE / AFTER</span>
       <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_00000000c00c7209ac897560c940c7a7.png" alt="施術前後の姿勢変化">
@@ -894,16 +832,17 @@
       </ul>
     </div>
     <div class="mid-cta-sub">情報だけの登録で大丈夫です。解除はいつでも可能です。</div>
-    <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line" style="display:flex;margin-bottom:14px;">LINEで無料登録する →</a>
+    <a href="https://lin.ee/668VcBa" target="_blank" class="btn-line" style="display:flex;margin-bottom:14px;">
+      <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="24" border="0">
+      LINEで無料登録する →
+    </a>
     <div class="mid-cta-divider">▽ すぐに体験したい方はこちら</div>
-    <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve" style="display:flex;">体験を予約する（初回60分 ¥8,000） →</a>
+    <a href="https://remedialtherapy.jp/reserve/" target="_blank" class="btn-reserve" style="display:flex;">体験を予約する（初回60分 ¥8,000） →</a>
     <p class="mid-cta-reserve-note">五反田・自由が丘エリア対応</p>
   </div>
 </div>
 
-<!-- =====================
-     PROFILE（比較表の前に移動）
-===================== -->
+<!-- PROFILE -->
 <section class="section-profile">
   <div class="profile-inner">
     <div class="profile-img-box">
@@ -1102,7 +1041,6 @@
         </div>
       </div>
 
-     
     </div>
   </div>
 </section>
@@ -1123,7 +1061,10 @@
       </ul>
     </div>
     <div class="final-cta-btns">
-      <a href="https://lin.ee/XXXXXXX" target="_blank" class="btn-line">LINEで無料登録する →</a>
+      <a href="https://lin.ee/668VcBa" target="_blank" class="btn-line">
+        <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="26" border="0">
+        LINEで無料登録する →
+      </a>
     </div>
     <div class="line-reply-box">
       <strong>登録後のご案内</strong>
@@ -1136,8 +1077,8 @@
     <div class="reserve-section">
       <span class="reserve-section-label">▽ すぐに体験を予約したい方はこちら</span>
       <div class="reserve-btns">
-        <a href="https://forms.gle/5Y3yMEvh8fMkSUya8" target="_blank" class="btn-reserve btn-reserve-dark">体験を予約する（五反田エリア）初回60分 ¥8,000 →</a>
-        <a href="https://forms.gle/b68Zvx9qbif83sy3A" target="_blank" class="btn-reserve btn-reserve-dark">体験を予約する（自由が丘エリア）初回60分 ¥8,000 →</a>
+        <a href="https://remedialtherapy.jp/reserve/" target="_blank" class="btn-reserve btn-reserve-dark">体験を予約する（五反田エリア）初回60分 ¥8,000 →</a>
+        <a href="https://remedialtherapy.jp/reserve/" target="_blank" class="btn-reserve btn-reserve-dark">体験を予約する（自由が丘エリア）初回60分 ¥8,000 →</a>
       </div>
       <p class="reserve-note">相談だけでも大丈夫です。合わない場合は体験のみで構いません。</p>
     </div>
