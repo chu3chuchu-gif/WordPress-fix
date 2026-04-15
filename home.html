@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JART ヒーローセクション v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #1E1A16;
+  --brown:     #4A3320;
+  --mid:       #7A5C40;
+  --warm:      #C4714A;
+  --warm-lt:   #D98B65;
+  --gold:      #B89460;
+  --cream:     #FAF7F2;
+  --sand:      #EDE4D8;
+  --line-clr:  rgba(184,148,96,0.22);
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 52px;
+  background: rgba(250,247,242,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line-clr);
+}
+.logo-wrap { display: flex; flex-direction: column; gap: 2px; }
+.logo-en {
+  font-family: 'Lato', sans-serif; font-weight: 300;
+  font-size: 10px; letter-spacing: 0.38em; color: var(--gold); text-transform: uppercase;
+}
+.logo-ja {
+  font-family: 'Shippori Mincho', serif; font-weight: 600;
+  font-size: 14px; letter-spacing: 0.1em; color: var(--ink);
+}
+nav { display: flex; gap: 32px; align-items: center; }
+nav a {
+  font-size: 13px; color: var(--mid); text-decoration: none;
+  letter-spacing: 0.06em; transition: color 0.2s;
+}
+nav a:hover { color: var(--warm); }
+.nav-cta {
+  background: var(--warm); color: #fff !important;
+  padding: 9px 22px; font-size: 12px !important;
+  letter-spacing: 0.1em; border-radius: 2px; transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--warm-lt) !important; }
+
+/* ハンバーガーボタン */
+.hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  width: 36px; height: 36px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 100%; height: 2px;
+  background: var(--ink); border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* モバイルメニュー */
+.mobile-menu {
+  display: none;
+  position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+  background: rgba(250,247,242,0.98);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line-clr);
+  flex-direction: column;
+  padding: 8px 0 16px;
+  transform: translateY(-8px);
+  opacity: 0;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.mobile-menu.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+.mobile-menu a {
+  padding: 14px 28px;
+  font-size: 14px; color: var(--mid); text-decoration: none;
+  letter-spacing: 0.06em; border-bottom: 1px solid var(--line-clr);
+  transition: color .2s, background .2s;
+}
+.mobile-menu a:hover { color: var(--warm); background: rgba(184,148,96,0.04); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mob-cta {
+  margin: 12px 28px 0;
+  padding: 14px 20px;
+  background: var(--warm); color: #fff !important;
+  text-align: center; border-radius: 3px; border-bottom: none;
+  font-weight: 500;
+}
+
+/* ── HERO WRAPPER ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+/* ── MAIN AREA ── */
+.hero-main {
+  display: grid;
+  grid-template-columns: 52% 48%;
+  min-height: calc(100vh - 72px - 72px);
+}
+
+/* ── LEFT COPY ── */
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 72px 56px 72px 72px;
+}
+
+/* eyebrow */
+.eyebrow {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 40px;
+  opacity: 0; animation: fadeUp .7s ease .15s forwards;
+}
+.eyebrow-line { width: 32px; height: 1px; background: var(--gold); }
+.eyebrow-text {
+  font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 300;
+  letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase;
+}
+
+/* hook */
+.hook {
+  font-family: 'Shippori Mincho', serif; font-weight: 800;
+  font-size: clamp(30px, 3.6vw, 50px);
+  line-height: 1.5; letter-spacing: 0.04em; color: var(--ink);
+  margin-bottom: 12px;
+  opacity: 0; animation: fadeUp .8s ease .3s forwards;
+}
+.hook-accent {
+  color: var(--warm);
+  border-bottom: 3px solid var(--warm);
+  padding-bottom: 2px;
+}
+
+/* sub-hook */
+.sub-hook {
+  font-size: 15px; font-weight: 400; color: var(--mid);
+  letter-spacing: 0.06em; margin-bottom: 44px;
+  line-height: 1.9;
+  opacity: 0; animation: fadeUp .8s ease .45s forwards;
+}
+.sub-hook strong { color: var(--ink); font-weight: 500; }
+
+/* 3 pillars */
+.pillars {
+  display: flex; flex-direction: column; gap: 0;
+  margin-bottom: 52px;
+  opacity: 0; animation: fadeUp .8s ease .6s forwards;
+}
+.pillar {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line-clr);
+}
+.pillar:first-child { border-top: 1px solid var(--line-clr); }
+.pillar-num {
+  font-family: 'Lato', sans-serif; font-weight: 700;
+  font-size: 11px; letter-spacing: 0.2em;
+  color: var(--warm); min-width: 28px; padding-top: 2px;
+}
+.pillar-body {}
+.pillar-title {
+  font-weight: 700; font-size: 14px; letter-spacing: 0.06em;
+  color: var(--ink); margin-bottom: 5px;
+}
+.pillar-desc {
+  font-size: 12px; color: var(--mid); line-height: 1.85; letter-spacing: 0.04em;
+}
+
+/* CTA area */
+.cta-area {
+  display: flex; flex-direction: column; gap: 12px; max-width: 380px;
+  opacity: 0; animation: fadeUp .8s ease .8s forwards;
+}
+.btn-main {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 28px;
+  background: var(--ink); color: #fff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.1em;
+  border-radius: 3px;
+  transition: background .25s, transform .25s;
+  box-shadow: 0 8px 28px rgba(30,26,22,0.22);
+}
+.btn-main:hover { background: var(--brown); transform: translateY(-2px); }
+.btn-treatment {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 28px;
+  background: #ffffff; color: var(--ink);
+  text-decoration: none;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+  border: 1.5px solid var(--sand);
+  border-radius: 3px;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+.btn-treatment:hover {
+  border-color: var(--gold);
+  background: rgba(184,148,96,0.06);
+  transform: translateY(-2px);
+}
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 0;
+  background: transparent;
+
+  color: #2a7de1;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+}
+.btn-line:hover { opacity: .88; transform: translateY(-2px); }
+.btn-line-icon { font-size: 16px; }
+.btn-arrow { font-size: 16px; opacity: .7; transition: transform .2s; }
+.btn-main:hover .btn-arrow { transform: translateX(4px); opacity: 1; }
+
+/* ── RIGHT VISUAL ── */
+.hero-right {
+  position: relative; overflow: hidden;
+  background: var(--sand);
+}
+.hero-right img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  opacity: 0;
+  animation: imgIn 1.2s ease .2s forwards;
+}
+.hero-right-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(30,26,22,.15) 0%, rgba(196,113,74,.06) 100%);
+  z-index: 1;
+}
+
+/* floating tag */
+.float-tag {
+  position: absolute; bottom: 44px; left: -1px; z-index: 2;
+  background: var(--warm);
+  padding: 14px 28px 14px 24px;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+  opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
+}
+.float-tag-sub {
+  font-family: 'Lato', sans-serif; font-size: 9px; font-weight: 300;
+  letter-spacing: 0.35em; color: rgba(255,255,255,.75);
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.float-tag-main {
+  font-family: 'Shippori Mincho', serif; font-size: 15px; font-weight: 600;
+  color: #fff; letter-spacing: 0.06em; line-height: 1.5;
+}
+
+/* ── BOTTOM STRIP ── */
+.hero-strip {
+  background: var(--ink);
+  display: flex; align-items: stretch;
+  height: 72px;
+}
+.strip-item {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 0 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  opacity: 0; animation: fadeIn .6s ease 1.4s forwards;
+}
+.strip-item:last-child { border-right: none; }
+.strip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--warm); flex-shrink: 0; }
+.strip-text { font-size: 11.5px; color: rgba(250,247,242,.65); letter-spacing: 0.06em; }
+.strip-text strong { color: rgba(250,247,242,.95); font-weight: 500; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  header { padding: 14px 20px; }
+  nav { display: none; }
+  .hamburger { display: flex; }
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: unset;
+  }
+
+  .hero-left {
+    padding: 48px 24px 40px;
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1;
+    height: 52vw;
+    min-height: 220px;
+    max-height: 320px;
+  }
+  .hero-right img { object-position: center 20%; }
+
+  .float-tag { display: none; }
+  .hook { font-size: clamp(26px, 7vw, 36px); }
+  .sub-hook { font-size: 13px; }
+  .pillar-title { font-size: 13px; }
+  .pillar-desc  { font-size: 12px; }
+  .cta-area { max-width: 100%; }
+
+  .hero-strip {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 0;
+  }
+  .strip-item {
+    flex: 1 1 50%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 16px;
+    justify-content: flex-start;
+  }
+  .strip-item:nth-child(3),
+  .strip-item:nth-child(4) { border-bottom: none; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes imgIn {
+  from { opacity:0; transform:scale(1.05); }
+  to   { opacity:1; transform:scale(1); }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-wrap">
+    <span class="logo-en">Japan Association of Remedial Therapy</span>
+    <span class="logo-ja">日本リメディアルセラピー協会</span>
+  </div>
+  <nav>
+    <a href="#">リメディアルセラピーとは</a>
+    <a href="#">資格・スクール</a>
+    <a href="#">施術を受ける</a>
+    <a href="#">ブログ</a>
+    <a href="#" class="nav-cta">無料相談（LINE）</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">リメディアルセラピーとは</a>
+  <a href="#">資格・スクール</a>
+  <a href="#">施術を受ける</a>
+  <a href="#">ブログ</a>
+  <a href="#" class="mob-cta">無料相談（LINE）</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-main">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Remedial Therapy · JART</span>
+      </div>
+      <h1 class="hook">
+        <span class="hook-accent">施術迷子</span>に<br>なっていませんか？
+      </h1>
+      <p class="sub-hook">
+        タイ古式、指圧、アロマ、筋膜リリース…<br>
+        資格はあるのに、<strong>クライアントの状態が変わらない。</strong><br>
+        それは「手技」ではなく「見立て」が足りないからかもしれません。
+      </p>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <div class="pillar-body">
+            <div class="pillar-title">見立て ── 原因にたどりつく力</div>
+            <div class="pillar-desc">どこが痛みや不具合の根本か。その判断ができてはじめて、施術が意味をもちます。</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <div class="pillar-body">
+            <div class="pillar-title">手技 ── 解決するための引き出し</div>
+            <div class="pillar-desc">関節モビライゼーション、トリガーポイント、オイルトリートメント。目的に合った手技を選べる幅を持つ。</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <div class="pillar-body">
+            <div class="pillar-title">持続 ── その場だけで終わらせない</div>
+            <div class="pillar-desc">「楽になったけどぶり返す」から卒業。見立てと手技が揃うと、変化が長続きします。</div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-area">
+        <a href="#" class="btn-main">
+          スクール・資格取得の内容を見る
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#" class="btn-treatment">
+          施術を受けてみたい方はこちら
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#" class="btn-line">
+          <span>まずLINEで気軽に相談する</span>
+          <span class="btn-line-icon">💬</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <!-- ↓ この src= の URL を変えると写真が変わります -->
+    <div class="hero-right">
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/0001-5193146533310714918.png" alt="リメディアルセラピー施術" />
+      <div class="hero-right-overlay"></div>
+      <div class="float-tag">
+        <div class="float-tag-sub">What you will learn</div>
+        <div class="float-tag-main">見立て ＋ 手技 ＋ 持続<br>３つが揃う、唯一のセラピー</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM STRIP -->
+  <div class="hero-strip">
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-text"><strong>腰痛・肩こり</strong>など症状別の打ち出しが可能</span>
+    </div>
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-text"><strong>骨格矯正・筋膜リリース</strong>どんな切り口にも対応</span>
+    </div>
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-text">今ある資格に<strong>組み合わせて使える</strong></span>
+    </div>
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-text">体験講座から<strong>資格取得</strong>まで対応</span>
+    </div>
+  </div>
+
+</section>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+// メニュー内リンクをタップしたら閉じる
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
