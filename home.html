@@ -26,91 +26,9 @@ body {
   color: var(--ink);
 }
 
-/* ── HEADER ── */
-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 52px;
-  background: rgba(250,247,242,0.92);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line-clr);
-}
-.logo-wrap { display: flex; flex-direction: column; gap: 2px; }
-.logo-en {
-  font-family: 'Lato', sans-serif; font-weight: 300;
-  font-size: 10px; letter-spacing: 0.38em; color: var(--gold); text-transform: uppercase;
-}
-.logo-ja {
-  font-family: 'Shippori Mincho', serif; font-weight: 600;
-  font-size: 14px; letter-spacing: 0.1em; color: var(--ink);
-}
-nav { display: flex; gap: 32px; align-items: center; }
-nav a {
-  font-size: 13px; color: var(--mid); text-decoration: none;
-  letter-spacing: 0.06em; transition: color 0.2s;
-}
-nav a:hover { color: var(--warm); }
-.nav-cta {
-  background: var(--warm); color: #fff !important;
-  padding: 9px 22px; font-size: 12px !important;
-  letter-spacing: 0.1em; border-radius: 2px; transition: background 0.2s !important;
-}
-.nav-cta:hover { background: var(--warm-lt) !important; }
-
-/* ハンバーガーボタン */
-.hamburger {
-  display: none;
-  flex-direction: column; justify-content: center; gap: 5px;
-  width: 36px; height: 36px;
-  background: none; border: none; cursor: pointer; padding: 4px;
-}
-.hamburger span {
-  display: block; width: 100%; height: 2px;
-  background: var(--ink); border-radius: 2px;
-  transition: transform .3s, opacity .3s;
-}
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* モバイルメニュー */
-.mobile-menu {
-  display: none;
-  position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
-  background: rgba(250,247,242,0.98);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line-clr);
-  flex-direction: column;
-  padding: 8px 0 16px;
-  transform: translateY(-8px);
-  opacity: 0;
-  transition: transform .3s ease, opacity .3s ease;
-}
-.mobile-menu.open {
-  display: flex;
-  transform: translateY(0);
-  opacity: 1;
-}
-.mobile-menu a {
-  padding: 14px 28px;
-  font-size: 14px; color: var(--mid); text-decoration: none;
-  letter-spacing: 0.06em; border-bottom: 1px solid var(--line-clr);
-  transition: color .2s, background .2s;
-}
-.mobile-menu a:hover { color: var(--warm); background: rgba(184,148,96,0.04); }
-.mobile-menu a:last-child { border-bottom: none; }
-.mobile-menu .mob-cta {
-  margin: 12px 28px 0;
-  padding: 14px 20px;
-  background: var(--warm); color: #fff !important;
-  text-align: center; border-radius: 3px; border-bottom: none;
-  font-weight: 500;
-}
-
 /* ── HERO WRAPPER ── */
 .hero {
   min-height: 100vh;
-  padding-top: 72px;
   display: grid;
   grid-template-rows: 1fr auto;
 }
@@ -119,7 +37,7 @@ nav a:hover { color: var(--warm); }
 .hero-main {
   display: grid;
   grid-template-columns: 52% 48%;
-  min-height: calc(100vh - 72px - 72px);
+  min-height: calc(100vh - 72px);
 }
 
 /* ── LEFT COPY ── */
@@ -295,10 +213,6 @@ nav a:hover { color: var(--warm); }
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  header { padding: 14px 20px; }
-  nav { display: none; }
-  .hamburger { display: flex; }
-
   .hero-main {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -358,33 +272,6 @@ nav a:hover { color: var(--warm); }
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="logo-wrap">
-    <span class="logo-en">Japan Association of Remedial Therapy</span>
-    <span class="logo-ja">日本リメディアルセラピー協会</span>
-  </div>
-  <nav>
-    <a href="#">リメディアルセラピーとは</a>
-    <a href="#">資格・スクール</a>
-    <a href="#">施術を受ける</a>
-    <a href="#">ブログ</a>
-    <a href="#" class="nav-cta">無料相談（LINE）</a>
-  </nav>
-  <button class="hamburger" id="hamburger" aria-label="メニュー">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<!-- モバイルメニュー -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#">リメディアルセラピーとは</a>
-  <a href="#">資格・スクール</a>
-  <a href="#">施術を受ける</a>
-  <a href="#">ブログ</a>
-  <a href="#" class="mob-cta">無料相談（LINE）</a>
-</div>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-main">
@@ -427,15 +314,15 @@ nav a:hover { color: var(--warm); }
         </div>
       </div>
       <div class="cta-area">
-        <a href="#" class="btn-main">
+        <a href="https://remedialtherapy.jp/courses/" class="btn-main">
           スクール・資格取得の内容を見る
           <span class="btn-arrow">→</span>
         </a>
-        <a href="#" class="btn-treatment">
+        <a href="https://remedialtherapy.jp/treatment-2/" class="btn-treatment">
           施術を受けてみたい方はこちら
           <span class="btn-arrow">→</span>
         </a>
-        <a href="#" class="btn-line">
+        <a href="https://lin.ee/ShCKjh9" class="btn-line">
           <span>まずLINEで気軽に相談する</span>
           <span class="btn-line-icon">💬</span>
         </a>
@@ -477,20 +364,5 @@ nav a:hover { color: var(--warm); }
 
 </section>
 
-<script>
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-});
-// メニュー内リンクをタップしたら閉じる
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  });
-});
-</script>
 </body>
 </html>
