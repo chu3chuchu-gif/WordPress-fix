@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JART — 代表紹介（ホーム軽量版）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:      #1E1A16;
+  --brown:    #4A3320;
+  --mid:      #7A5C40;
+  --warm:     #C4714A;
+  --warm-lt:  #D98B65;
+  --gold:     #B89460;
+  --cream:    #FAF7F2;
+  --sand:     #EDE4D8;
+  --sand-dk:  #D9CCBB;
+  --line-clr: rgba(184,148,96,0.22);
+}
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--ink); }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 32px; background: var(--ink); color: #fff;
+  text-decoration: none; font-size: 14px; font-weight: 500;
+  letter-spacing: 0.1em; border-radius: 3px;
+  transition: background .2s, transform .2s;
+  box-shadow: 0 6px 24px rgba(30,26,22,0.18);
+}
+.btn-primary:hover { background: var(--brown); transform: translateY(-2px); }
+
+/* ════ 代表セクション（軽量版）════ */
+.founder-light {
+  padding: 120px 72px;
+  background: var(--sand);
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* 左：写真 */
+.founder-light-photo {
+  position: relative;
+}
+.founder-light-photo-wrap {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  position: relative;
+}
+.founder-light-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  filter: grayscale(10%);
+  transition: filter .4s;
+}
+.founder-light-photo-wrap:hover img { filter: grayscale(0%); }
+.founder-light-photo-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  border: 1px solid rgba(184,148,96,0.3);
+  pointer-events: none;
+}
+/* デコ枠 */
+.founder-light-deco {
+  position: absolute;
+  bottom: -16px; right: -16px;
+  width: 80px; height: 80px;
+  border: 2px solid var(--sand-dk);
+  z-index: -1;
+}
+
+/* 右：テキスト */
+.founder-light-body {}
+
+.founder-light-eyebrow {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+}
+.founder-light-eyebrow-line { width: 32px; height: 1px; background: var(--gold); }
+.founder-light-eyebrow-text {
+  font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 300;
+  letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase;
+}
+
+.founder-light-role {
+  font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 500;
+  color: var(--warm); letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.founder-light-name {
+  font-family: 'Shippori Mincho', serif; font-weight: 800;
+  font-size: clamp(28px, 3.5vw, 48px);
+  color: var(--ink); letter-spacing: 0.06em;
+  line-height: 1.2; margin-bottom: 32px;
+}
+.founder-light-name span {
+  display: block; font-size: 0.42em; font-weight: 400;
+  color: var(--mid); letter-spacing: 0.12em; margin-bottom: 6px;
+}
+
+/* 実績バッジ3つ横並び */
+.founder-light-badges {
+  display: flex; gap: 2px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.founder-badge {
+  background: var(--ink);
+  padding: 16px 20px;
+  flex: 1; min-width: 120px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.founder-badge-num {
+  font-family: 'Lato', sans-serif; font-weight: 300;
+  font-size: 20px; color: var(--warm); letter-spacing: -0.02em; line-height: 1;
+}
+.founder-badge-label {
+  font-size: 10px; color: rgba(250,247,242,0.55); line-height: 1.6; letter-spacing: 0.04em;
+}
+
+/* 一言メッセージ */
+.founder-light-quote {
+  padding: 20px 24px;
+  border-left: 3px solid var(--warm);
+  background: rgba(196,113,74,0.06);
+  margin-bottom: 36px;
+}
+.founder-light-quote-text {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 14px; line-height: 2; color: var(--ink); letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .founder-light {
+    grid-template-columns: 1fr;
+    gap: 48px; padding: 72px 24px;
+  }
+  .founder-light-photo { max-width: 280px; }
+  .founder-light-deco { display: none; }
+  .founder-light-badges { gap: 2px; }
+  .founder-badge { min-width: 100px; }
+}
+</style>
+</head>
+<body>
+
+<section class="founder-light">
+
+  <!-- 写真 -->
+  <div class="founder-light-photo">
+    <div class="founder-light-photo-wrap">
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2021/10/1625189757123-1-1024x1024.png" alt="代表 森岡望">
+    </div>
+    <div class="founder-light-deco"></div>
+  </div>
+
+  <!-- テキスト -->
+  <div class="founder-light-body">
+
+    <div class="founder-light-eyebrow">
+      <div class="founder-light-eyebrow-line"></div>
+      <span class="founder-light-eyebrow-text">Founder · Director</span>
+    </div>
+
+    <div class="founder-light-role">JART 代表</div>
+    <h2 class="founder-light-name">
+      <span>Nozomu Morioka</span>
+      森岡　望
+    </h2>
+
+    <div class="founder-light-badges">
+      <div class="founder-badge">
+        <div class="founder-badge-num">東京五輪</div>
+        <div class="founder-badge-label">元・体操日本代表<br>強化トレーナー</div>
+      </div>
+      <div class="founder-badge">
+        <div class="founder-badge-num">2006</div>
+        <div class="founder-badge-label">リメディアルセラピーを<br>日本に広めた第一人者</div>
+      </div>
+      <div class="founder-badge">
+        <div class="founder-badge-num">著書</div>
+        <div class="founder-badge-label">売れるセラピストに<br>なるための5つの法則</div>
+      </div>
+    </div>
+
+    <div class="founder-light-quote">
+      <p class="founder-light-quote-text">
+        真剣勝負の世界で生きる選手たちと向き合ってきたからこそ、伝えられることがある。すべてのセラピストが、自信を持ってクライアントと向き合える未来を目指しています。
+      </p>
+    </div>
+
+    <a href="#" class="btn-primary">森岡について詳しく見る →</a>
+
+  </div>
+
+</section>
+
+</body>
+</html>
