@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JART — 施術セクション</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:      #1E1A16;
+  --brown:    #4A3320;
+  --mid:      #7A5C40;
+  --warm:     #C4714A;
+  --warm-lt:  #D98B65;
+  --gold:     #B89460;
+  --cream:    #FAF7F2;
+  --sand:     #EDE4D8;
+  --sand-dk:  #D9CCBB;
+  --line-clr: rgba(184,148,96,0.22);
+}
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--ink); }
+
+.btn-warm { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--warm); color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; border-radius: 3px; transition: background .2s, transform .2s; box-shadow: 0 6px 24px rgba(196,113,74,0.28); }
+.btn-warm:hover { background: var(--warm-lt); transform: translateY(-2px); }
+
+.section-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.eyebrow-line { width: 32px; height: 1px; background: var(--warm-lt); }
+.eyebrow-text { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.4em; color: var(--warm-lt); text-transform: uppercase; }
+
+.treatment {
+  background: var(--ink);
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.treatment-left {
+  position: relative;
+  padding: 120px 72px;
+  background: url('https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/1773046437434.png') center/contain no-repeat var(--ink);
+}
+.treatment-left::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(30,26,22,0.65);
+  z-index: 0;
+}
+.treatment-left > * { position: relative; z-index: 1; }
+.treatment-right {
+  padding: 120px 72px;
+  background: var(--ink);
+  display: flex; flex-direction: column; gap: 16px;
+  justify-content: center;
+}
+.treatment-left .section-title {
+  font-family: 'Shippori Mincho', serif; font-weight: 800;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.5; letter-spacing: 0.04em;
+  color: #fff; margin-bottom: 16px;
+}
+.treatment-left .section-lead {
+  font-size: 14px; line-height: 2;
+  color: rgba(250,247,242,0.65); max-width: 440px; letter-spacing: 0.04em;
+}
+.treatment-note {
+  margin: 28px 0 36px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: 3px solid var(--warm);
+  font-size: 13px; color: rgba(250,247,242,0.6);
+  line-height: 1.9; letter-spacing: 0.04em;
+}
+.treatment-note strong { color: rgba(250,247,242,0.9); font-weight: 500; }
+.treatment-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+a.menu-card {
+  text-decoration: none;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 32px 36px; border-radius: 4px;
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  transition: background .25s, border-color .25s; cursor: pointer;
+}
+a.menu-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(196,113,74,0.4); }
+.menu-card-body {}
+.menu-duration { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.35em; color: var(--warm-lt); text-transform: uppercase; margin-bottom: 10px; }
+.menu-name { font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 18px; color: #fff; margin-bottom: 8px; letter-spacing: 0.04em; }
+.menu-desc { font-size: 12px; color: rgba(250,247,242,0.5); line-height: 1.8; }
+.menu-price { text-align: right; flex-shrink: 0; }
+.menu-price-num { font-family: 'Lato', sans-serif; font-weight: 300; font-size: 28px; color: #fff; letter-spacing: -0.02em; line-height: 1; }
+.menu-price-unit { font-size: 12px; color: rgba(250,247,242,0.4); letter-spacing: 0.06em; margin-top: 4px; }
+.menu-option { font-size: 11px; color: rgba(196,113,74,0.7); letter-spacing: 0.06em; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+
+@media (max-width: 768px) {
+  .treatment { grid-template-columns: 1fr; }
+  .treatment-left { padding: 72px 24px; background-size: cover; }
+  .treatment-right { padding: 72px 24px; }
+  a.menu-card { flex-direction: column; align-items: flex-start; }
+  .menu-price { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<section class="treatment">
+  <div class="treatment-left">
+    <div class="section-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Treatment · Book</span>
+    </div>
+    <h2 class="section-title">まず、自分のからだで<br>感じてみる。</h2>
+    <p class="section-lead">「本物のリメディアルセラピー」を、ぜひ一度体感してみてください。実際に施術を受けることで、身体がどう変わるのか、その深さを実感できます。</p>
+    <div class="treatment-note">
+      施術はJARTのスペシャリスト講師陣が担当します。<br>
+      <strong>代表・森岡によるご指名施術も受け付けております（指名料 ¥10,000）。</strong>
+    </div>
+    <div class="treatment-btns">
+      <a href="#" class="btn-warm">施術を予約する →</a>
+    </div>
+  </div>
+
+  <div class="treatment-right">
+    <a href="#" class="menu-card">
+      <div class="menu-card-body">
+        <div class="menu-duration">90 min</div>
+        <div class="menu-name">リメディアルセラピー 90分</div>
+        <div class="menu-desc">主に着衣を中心に全身を整えるコース。</div>
+      </div>
+      <div class="menu-price">
+        <div class="menu-price-num">¥16,500</div>
+        <div class="menu-price-unit">税込</div>
+      </div>
+    </a>
+    <a href="#" class="menu-card">
+      <div class="menu-card-body">
+        <div class="menu-duration">120 min</div>
+        <div class="menu-name">リメディアルセラピー 120分</div>
+        <div class="menu-desc">全身を深く整えます。からだの隅々まで解放したい方に。</div>
+      </div>
+      <div class="menu-price">
+        <div class="menu-price-num">¥22,000</div>
+        <div class="menu-price-unit">税込</div>
+      </div>
+    </a>
+    <div class="menu-option">※ 代表・森岡トレーナー指名料 +¥10,000</div>
+  </div>
+</section>
+
+</body>
+</html>
