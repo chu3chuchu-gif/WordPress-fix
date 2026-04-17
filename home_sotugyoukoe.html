@@ -22,7 +22,20 @@
 .jart-voices-wrap .v-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 
 /* カード */
-.jart-voices-wrap .v-card { background: #fff; display: flex; flex-direction: column; }
+.jart-voices-wrap .v-card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.jart-voices-wrap .v-card:hover,
+.jart-voices-wrap .v-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(30,26,22,0.16);
+}
 
 .jart-voices-wrap .v-card-photo { position: relative; height: 240px; overflow: hidden; }
 .jart-voices-wrap .v-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
@@ -65,7 +78,7 @@
     <div class="v-grid">
 
       <!-- 01 アロマセラピスト -->
-      <div class="v-card">
+      <a href="https://remedialtherapy.jp/courses/" class="v-card">
         <div class="v-card-photo">
           <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_000000005504720794328757a542a50b.png" alt="施術風景">
           <div class="v-card-photo-overlay"></div>
@@ -80,10 +93,10 @@
             <div class="v-after-text">施術後に「楽になった」と言われる回数が明らかに増えました。</div>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- 02 ヨガ・ピラティス講師 -->
-      <div class="v-card">
+      <a href="https://remedialtherapy.jp/courses/" class="v-card">
         <div class="v-card-photo">
           <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/jade-stephens-jYCBcSN8ixw-unsplash.jpg" alt="ピラティスイメージ">
           <div class="v-card-photo-overlay"></div>
@@ -99,10 +112,10 @@
             <div class="v-after-text">一人ひとりの体の癖が見えるようになり、その人に合ったアドバイスができるようになりました。</div>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- 03 整体師 -->
-      <div class="v-card">
+      <a href="https://remedialtherapy.jp/courses/" class="v-card">
         <div class="v-card-photo">
           <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_000000004f0c7207b094fd3e57a43e8a.png" alt="施術風景">
           <div class="v-card-photo-overlay"></div>
@@ -117,17 +130,17 @@
             <div class="v-after-text">施術の再現性が上がり、「また来たい」と言ってもらえることが増えました。</div>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
 
     <!-- CTA -->
     <div style="text-align:center; margin-top:56px;">
-      <a href="https://lin.ee/xxxx" target="_blank" style="display:inline-flex; align-items:center; gap:10px; padding:18px 40px; background:#06C755; color:#fff; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:0.08em; border-radius:3px; margin-bottom:16px;">
+      <a href="https://lin.ee/ShCKjh9" target="_blank" style="display:inline-flex; align-items:center; gap:10px; padding:18px 40px; background:#06C755; color:#fff; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:0.08em; border-radius:3px; margin-bottom:16px;">
         💬 まずLINEで気軽に相談する
       </a>
       <div>
-        <a href="/learn/" style="font-size:12px; color:#C4714A; letter-spacing:0.1em; text-decoration:none; border-bottom:1px solid #D98B65; padding-bottom:2px;">スクールの詳細を見る →</a>
+        <a href="https://remedialtherapy.jp/courses/" style="font-size:12px; color:#C4714A; letter-spacing:0.1em; text-decoration:none; border-bottom:1px solid #D98B65; padding-bottom:2px;">スクールの詳細を見る →</a>
       </div>
     </div>
 
