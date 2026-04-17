@@ -1,0 +1,135 @@
+<style>
+.jart-voices-wrap *, .jart-voices-wrap *::before, .jart-voices-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.jart-voices-wrap {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #1E1A16;
+  padding: 100px 72px;
+  background: #EDE4D8;
+}
+.jart-voices-wrap .v-inner { max-width: 1080px; margin: 0 auto; }
+
+/* eyebrow */
+.jart-voices-wrap .eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.jart-voices-wrap .eyebrow-line { width: 32px; height: 1px; background: #B89460; flex-shrink: 0; }
+.jart-voices-wrap .eyebrow-text { font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.4em; color: #B89460; text-transform: uppercase; }
+
+/* ヘッダー */
+.jart-voices-wrap .v-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
+.jart-voices-wrap .v-header h2 { font-family: 'Shippori Mincho', serif; font-weight: 800; font-size: clamp(24px,3vw,36px); color: #1E1A16; line-height: 1.4; letter-spacing: 0.06em; }
+.jart-voices-wrap .v-more { font-family: 'Lato', sans-serif; font-size: 12px; color: #C4714A; letter-spacing: 0.1em; text-decoration: none; border-bottom: 1px solid #D98B65; padding-bottom: 2px; white-space: nowrap; }
+
+/* グリッド */
+.jart-voices-wrap .v-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+
+/* カード */
+.jart-voices-wrap .v-card { background: #fff; display: flex; flex-direction: column; }
+
+.jart-voices-wrap .v-card-photo { position: relative; height: 240px; overflow: hidden; }
+.jart-voices-wrap .v-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.jart-voices-wrap .v-card-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,26,22,0.65) 0%, transparent 55%); }
+.jart-voices-wrap .v-card-profile { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 24px; }
+.jart-voices-wrap .v-card-role { font-size: 11px; color: rgba(250,247,242,0.7); letter-spacing: 0.1em; }
+.jart-voices-wrap .v-card-img-note { font-size: 9px; color: rgba(250,247,242,0.35); margin-top: 3px; letter-spacing: 0.04em; }
+
+.jart-voices-wrap .v-card-body { padding: 32px 28px; display: flex; flex-direction: column; flex: 1; }
+
+/* headline */
+.jart-voices-wrap .v-headline { font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 15px; color: #1E1A16; line-height: 1.65; letter-spacing: 0.04em; margin-bottom: 16px; }
+.jart-voices-wrap .v-headline em { font-style: normal; color: #C4714A; border-bottom: 1px solid #D98B65; }
+
+/* after */
+.jart-voices-wrap .v-after { margin-top: auto; padding: 14px 16px; background: rgba(196,113,74,0.06); border-left: 2px solid #C4714A; }
+.jart-voices-wrap .v-after-label { font-family: 'Lato', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.3em; color: #C4714A; text-transform: uppercase; margin-bottom: 6px; }
+.jart-voices-wrap .v-after-text { font-size: 12px; color: #1E1A16; line-height: 1.8; letter-spacing: 0.03em; font-weight: 500; }
+
+@media (max-width: 768px) {
+  .jart-voices-wrap { padding: 72px 24px; }
+  .jart-voices-wrap .v-grid { grid-template-columns: 1fr; }
+  .jart-voices-wrap .v-card-photo { height: 200px; }
+}
+</style>
+
+<div class="jart-voices-wrap">
+  <div class="v-inner">
+    <div class="v-header">
+      <div>
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">Graduate Voice</span>
+        </div>
+        <h2>卒業生の声</h2>
+      </div>
+      <a href="/voice/" class="v-more">すべての声を見る →</a>
+    </div>
+
+    <div class="v-grid">
+
+      <!-- 01 アロマセラピスト -->
+      <div class="v-card">
+        <div class="v-card-photo">
+          <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_000000005504720794328757a542a50b.png" alt="施術風景">
+          <div class="v-card-photo-overlay"></div>
+          <div class="v-card-profile">
+            <div class="v-card-role">アロマセラピスト</div>
+          </div>
+        </div>
+        <div class="v-card-body">
+          <h3 class="v-headline">「なんのためにやっているのか」が、<em>やっとわかった。</em></h3>
+          <div class="v-after">
+            <div class="v-after-label">After</div>
+            <div class="v-after-text">施術後に「楽になった」と言われる回数が明らかに増えました。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 ヨガ・ピラティス講師 -->
+      <div class="v-card">
+        <div class="v-card-photo">
+          <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/jade-stephens-jYCBcSN8ixw-unsplash.jpg" alt="ピラティスイメージ">
+          <div class="v-card-photo-overlay"></div>
+          <div class="v-card-profile">
+            <div class="v-card-role">ヨガ・ピラティス講師</div>
+            <div class="v-card-img-note">※イメージ写真</div>
+          </div>
+        </div>
+        <div class="v-card-body">
+          <h3 class="v-headline">「硬い」じゃなくて、「動かしにくい」。<em>その違いが見えるようになった。</em></h3>
+          <div class="v-after">
+            <div class="v-after-label">After</div>
+            <div class="v-after-text">一人ひとりの体の癖が見えるようになり、その人に合ったアドバイスができるようになりました。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 整体師 -->
+      <div class="v-card">
+        <div class="v-card-photo">
+          <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_000000004f0c7207b094fd3e57a43e8a.png" alt="施術風景">
+          <div class="v-card-photo-overlay"></div>
+          <div class="v-card-profile">
+            <div class="v-card-role">整体師</div>
+          </div>
+        </div>
+        <div class="v-card-body">
+          <h3 class="v-headline">同じ施術なのに、なぜ効く人と効かない人がいるのか。<em>その答えが見つかった。</em></h3>
+          <div class="v-after">
+            <div class="v-after-label">After</div>
+            <div class="v-after-text">施術の再現性が上がり、「また来たい」と言ってもらえることが増えました。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; margin-top:56px;">
+      <a href="https://lin.ee/xxxx" target="_blank" style="display:inline-flex; align-items:center; gap:10px; padding:18px 40px; background:#06C755; color:#fff; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:0.08em; border-radius:3px; margin-bottom:16px;">
+        💬 まずLINEで気軽に相談する
+      </a>
+      <div>
+        <a href="/learn/" style="font-size:12px; color:#C4714A; letter-spacing:0.1em; text-decoration:none; border-bottom:1px solid #D98B65; padding-bottom:2px;">スクールの詳細を見る →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
