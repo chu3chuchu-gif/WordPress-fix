@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施術を受けてみる — 日本リメディアルセラピー協会</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:#1E1A16; --brown:#4A3320; --mid:#7A5C40; --warm:#C4714A;
+  --warm-lt:#D98B65; --gold:#B89460; --cream:#FAF7F2; --sand:#EDE4D8;
+  --sand-dk:#D9CCBB; --line-clr:rgba(184,148,96,0.22);
+}
+body { font-family:'Noto Sans JP',sans-serif; background:var(--cream); color:var(--ink); }
+
+.eyebrow { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+.eyebrow-line { width:32px; height:1px; background:var(--gold); flex-shrink:0; }
+.eyebrow-text { font-family:'Lato',sans-serif; font-size:10px; font-weight:300; letter-spacing:0.4em; color:var(--gold); text-transform:uppercase; }
+.eyebrow--light .eyebrow-line { background:var(--warm-lt); }
+.eyebrow--light .eyebrow-text { color:var(--warm-lt); }
+
+/* HERO */
+.hero { background:var(--ink); padding:120px 72px 100px; position:relative; overflow:hidden; }
+.hero::before { content:'TREATMENT'; position:absolute; right:48px; top:50%; transform:translateY(-50%); font-family:'Lato',sans-serif; font-weight:700; font-size:100px; color:rgba(255,255,255,0.03); letter-spacing:-0.04em; line-height:1; pointer-events:none; }
+.hero-inner { max-width:640px; position:relative; z-index:1; }
+.hero h1 { font-family:'Shippori Mincho',serif; font-weight:800; font-size:clamp(28px,3.5vw,48px); color:#fff; line-height:1.4; letter-spacing:0.06em; margin-bottom:20px; }
+.hero h1 em { font-style:normal; color:var(--warm); }
+.hero p { font-size:14px; color:rgba(250,247,242,0.6); line-height:2.1; letter-spacing:0.05em; }
+
+/* 料金セクション */
+.treatment {
+  background:var(--ink); padding:0;
+  display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:stretch;
+}
+.treatment-left {
+  position:relative; padding:100px 72px;
+  background:url('https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/1773046437434.png') center/cover no-repeat var(--ink);
+}
+.treatment-left::before { content:''; position:absolute; inset:0; background:rgba(30,26,22,0.7); z-index:0; }
+.treatment-left > * { position:relative; z-index:1; }
+.treatment-left h2 { font-family:'Shippori Mincho',serif; font-weight:800; font-size:clamp(24px,3vw,38px); color:#fff; line-height:1.5; letter-spacing:0.04em; margin-bottom:16px; }
+.treatment-left p { font-size:14px; color:rgba(250,247,242,0.65); line-height:2; letter-spacing:0.04em; margin-bottom:32px; max-width:440px; }
+.treatment-note { margin-bottom:36px; padding:20px 24px; border:1px solid rgba(255,255,255,0.1); border-left:3px solid var(--warm); font-size:13px; color:rgba(250,247,242,0.6); line-height:1.9; letter-spacing:0.04em; }
+.treatment-note strong { color:rgba(250,247,242,0.9); font-weight:500; }
+.btn-warm { display:inline-flex; align-items:center; gap:12px; padding:16px 32px; background:var(--warm); color:#fff; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:0.1em; border-radius:3px; transition:background .2s, transform .2s; }
+.btn-warm:hover { background:var(--warm-lt); transform:translateY(-2px); }
+
+.treatment-right { padding:100px 72px; background:var(--ink); display:flex; flex-direction:column; gap:16px; justify-content:center; }
+a.menu-card { text-decoration:none; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); padding:32px 36px; border-radius:4px; display:flex; justify-content:space-between; align-items:center; gap:24px; transition:background .25s, border-color .25s; }
+a.menu-card:hover { background:rgba(255,255,255,0.09); border-color:rgba(196,113,74,0.4); }
+.menu-duration { font-family:'Lato',sans-serif; font-size:10px; font-weight:300; letter-spacing:0.35em; color:var(--warm-lt); text-transform:uppercase; margin-bottom:10px; }
+.menu-name { font-family:'Shippori Mincho',serif; font-weight:600; font-size:18px; color:#fff; margin-bottom:8px; letter-spacing:0.04em; }
+.menu-desc { font-size:12px; color:rgba(250,247,242,0.5); line-height:1.8; }
+.menu-price { text-align:right; flex-shrink:0; }
+.menu-price-num { font-family:'Lato',sans-serif; font-weight:300; font-size:28px; color:#fff; letter-spacing:-0.02em; line-height:1; }
+.menu-price-unit { font-size:12px; color:rgba(250,247,242,0.4); letter-spacing:0.06em; margin-top:4px; }
+.menu-option { font-size:11px; color:rgba(196,113,74,0.7); letter-spacing:0.06em; margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.06); }
+
+/* SNS割引 */
+.sns { padding:0 72px; background:var(--sand); }
+.sns-inner { max-width:800px; margin:0 auto; padding:32px 0; border-top:1px solid var(--line-clr); }
+.sns-note { font-size:12px; color:var(--mid); line-height:1.9; letter-spacing:0.04em; display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
+.sns-note-label { font-family:'Lato',sans-serif; font-size:8px; font-weight:700; letter-spacing:0.3em; color:var(--warm); text-transform:uppercase; flex-shrink:0; }
+.sns-note strong { color:var(--ink); font-weight:500; }
+/* 症状セクション */
+.symptoms { padding:100px 72px; background:var(--sand); }
+.symptoms-inner { max-width:900px; margin:0 auto; }
+.symptoms-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:48px; }
+.symptom-item { display:flex; align-items:flex-start; gap:16px; padding:20px 24px 20px 0; border-bottom:1px solid var(--line-clr); }
+.symptom-item:nth-child(odd) { padding-right:48px; }
+.symptom-dot { width:6px; height:6px; border-radius:50%; background:var(--warm); flex-shrink:0; margin-top:7px; }
+.symptom-name { font-size:13px; color:var(--ink); font-weight:500; letter-spacing:0.04em; line-height:1.5; margin-bottom:3px; }
+.symptom-note { font-size:11px; color:var(--mid); letter-spacing:0.04em; line-height:1.6; }
+/* リメディアルとは */
+.about-remedial { padding:100px 72px; background:var(--cream); }
+.about-remedial-inner { max-width:800px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.about-remedial-text h2 { font-family:'Shippori Mincho',serif; font-weight:800; font-size:clamp(20px,2.5vw,30px); color:var(--ink); letter-spacing:0.06em; margin-bottom:24px; line-height:1.5; }
+.about-remedial-text p { font-size:13px; color:var(--mid); line-height:2.1; letter-spacing:0.04em; }
+.about-remedial-box { background:var(--ink); padding:48px 40px; }
+.about-remedial-box-label { font-family:'Lato',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.35em; color:var(--warm-lt); text-transform:uppercase; margin-bottom:16px; }
+.about-remedial-box p { font-size:13px; color:rgba(250,247,242,0.7); line-height:2.1; letter-spacing:0.04em; }
+.about-remedial-box strong { color:#fff; font-weight:500; }
+
+/* 予約の流れ */
+.flow { padding:100px 72px; background:var(--cream); }
+.flow-inner { max-width:800px; margin:0 auto; }
+.flow-header { margin-bottom:56px; }
+.flow-header h2 { font-family:'Shippori Mincho',serif; font-weight:800; font-size:clamp(20px,2.5vw,30px); color:var(--ink); letter-spacing:0.06em; }
+.flow-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:48px; }
+.flow-step { background:#fff; padding:36px 32px; position:relative; }
+.flow-step-num { font-family:'Lato',sans-serif; font-weight:300; font-size:40px; color:var(--sand-dk); letter-spacing:-0.02em; line-height:1; margin-bottom:16px; }
+.flow-step-title { font-family:'Shippori Mincho',serif; font-weight:700; font-size:15px; color:var(--ink); letter-spacing:0.06em; margin-bottom:8px; }
+.flow-step-text { font-size:12px; color:var(--mid); line-height:1.8; letter-spacing:0.04em; }
+.flow-note { padding:20px 24px; background:var(--sand); border-left:2px solid var(--sand-dk); font-size:12px; color:var(--mid); line-height:1.8; letter-spacing:0.04em; }
+
+/* アクセス */
+.access { padding:100px 72px; background:var(--ink); }
+.access-inner { max-width:800px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.access-text h2 { font-family:'Shippori Mincho',serif; font-weight:800; font-size:clamp(20px,2.5vw,30px); color:#fff; letter-spacing:0.06em; margin-bottom:24px; }
+.access-item { display:flex; align-items:flex-start; gap:16px; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+.access-item:first-of-type { border-top:1px solid rgba(255,255,255,0.06); }
+.access-item-label { font-family:'Lato',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.3em; color:var(--warm-lt); text-transform:uppercase; flex-shrink:0; width:60px; margin-top:2px; }
+.access-item-text { font-size:13px; color:rgba(250,247,242,0.7); line-height:1.8; letter-spacing:0.04em; }
+.access-cta { display:flex; flex-direction:column; gap:12px; }
+.btn-warm-full { display:flex; align-items:center; justify-content:center; gap:10px; padding:18px 32px; background:var(--warm); color:#fff; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:0.1em; border-radius:3px; }
+.btn-line-full { display:flex; align-items:center; justify-content:center; gap:10px; padding:18px 32px; background:#06C755; color:#fff; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:0.08em; border-radius:3px; }
+
+@media (max-width:768px) {
+  .hero { padding:80px 24px 72px; }
+  .hero::before { display:none; }
+  .treatment { grid-template-columns:1fr; }
+  .treatment-left { padding:72px 24px; background-size:cover; }
+  .treatment-right { padding:72px 24px; }
+  a.menu-card { flex-direction:column; align-items:flex-start; }
+  .menu-price { text-align:left; }
+  .sns { padding:0 24px; }
+  .symptoms { padding:72px 24px; }
+  .symptoms-grid { grid-template-columns:1fr; }
+  .about-remedial { padding:72px 24px; }
+  .about-remedial-inner { grid-template-columns:1fr; gap:40px; }
+  .flow { padding:72px 24px; }
+  .flow-steps { grid-template-columns:1fr; }
+  .access { padding:72px 24px; }
+  .access-inner { grid-template-columns:1fr; gap:48px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow eyebrow--light">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Treatment</span>
+    </div>
+    <h1>そのからだ、一度<br><em>リセットしてみませんか。</em></h1>
+    <p>肩こり・腰痛の根本ケアから、オイルを使ったリラクゼーションまで。あなたの状態に合わせて、施術内容を組み立てます。</p>
+  </div>
+</section>
+
+<!-- 料金 -->
+<div class="treatment">
+  <div class="treatment-left">
+    <div class="eyebrow eyebrow--light">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Treatment · Menu</span>
+    </div>
+    <h2>施術メニュー</h2>
+    <p>JARTのスペシャリスト講師陣が担当します。代表・森岡によるご指名施術も受け付けております。</p>
+    <div class="treatment-note">
+      <strong>完全予約制</strong>です。ご予約フォームまたはLINEよりお気軽にご連絡ください。
+    </div>
+    <a href="/reservation/" class="btn-warm">施術を予約する →</a>
+  </div>
+  <div class="treatment-right">
+    <a href="/reservation/" class="menu-card">
+      <div class="menu-card-body">
+        <div class="menu-duration">90 min</div>
+        <div class="menu-name">リメディアルセラピー 90分</div>
+        <div class="menu-desc">主に着衣を中心に全身を整えるコース。</div>
+      </div>
+      <div class="menu-price">
+        <div class="menu-price-num">¥16,500</div>
+        <div class="menu-price-unit">税込</div>
+      </div>
+    </a>
+    <a href="/reservation/" class="menu-card">
+      <div class="menu-card-body">
+        <div class="menu-duration">120 min</div>
+        <div class="menu-name">リメディアルセラピー 120分</div>
+        <div class="menu-desc">全身を深く整えます。からだの隅々まで解放したい方に。</div>
+      </div>
+      <div class="menu-price">
+        <div class="menu-price-num">¥22,000</div>
+        <div class="menu-price-unit">税込</div>
+      </div>
+    </a>
+    <div class="menu-option">※ 代表・森岡トレーナー指名料 +¥10,000</div>
+  </div>
+</div>
+
+<!-- SNS割引 -->
+<section class="sns">
+  <div class="sns-inner">
+    <div class="sns-note">
+      <span class="sns-note-label">SNS Campaign</span>
+      施術後に<strong>写真・レビューの両方をSNSに掲載いただける方</strong>は、代表・森岡トレーナーの指名料から <strong>¥8,000 off</strong> でご予約いただけます。ご予約の際にその旨をお知らせください。
+    </div>
+  </div>
+</section>
+
+<!-- 症状 -->
+<section class="symptoms">
+  <div class="symptoms-inner">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Conditions</span>
+    </div>
+    <h2 style="font-family:'Shippori Mincho',serif; font-weight:800; font-size:clamp(22px,2.8vw,34px); color:var(--ink); letter-spacing:0.06em; line-height:1.5;">こんなお悩みに対応しています</h2>
+    <div class="symptoms-grid">
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">肩こり・首こり</div><div class="symptom-note">四十肩・五十肩なども対応できます</div></div></div>
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">腰痛・慢性的な重さ</div><div class="symptom-note">脊柱管狭窄症なども対応できます</div></div></div>
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">疲労感・だるさ</div></div></div>
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">姿勢の歪み</div></div></div>
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">頭痛</div></div></div>
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">股関節・膝の違和感</div></div></div>
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">スポーツ前後のケア</div><div class="symptom-note">特に運動（ピラティスやトレーニングなど）前の施術は動きが変わります</div></div></div>
+      <div class="symptom-item"><div class="symptom-dot"></div><div><div class="symptom-name">むくみ・冷え</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- リメディアルセラピーとは -->
+<section class="about-remedial">
+  <div class="about-remedial-inner">
+    <div class="about-remedial-text">
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">About</span>
+      </div>
+      <h2>リメディアルセラピーとは</h2>
+      <p>オーストラリア発祥の施術です。「リメディアル」とは「回復・修復」を意味し、からだの動きや姿勢を見立てながら、症状の根本にアプローチします。単なるリラクゼーションマッサージとは異なり、なぜその部位に不調が出ているのかを考えながら施術を行うのが特徴です。全身を施術する場合でも、必要な部位を見極めて集中してアプローチできます。</p>
+    </div>
+    <div class="about-remedial-box">
+      <div class="about-remedial-box-label">Point</div>
+      <p><strong>「その場だけ」で終わらせない。</strong><br><br>痛みや不調の場所だけをほぐすのではなく、なぜそこに症状が出ているかを見立てながら施術します。からだ全体のバランスを整えることで、より持続的な変化を目指します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 予約の流れ -->
+<section class="flow">
+  <div class="flow-inner">
+    <div class="flow-header">
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">How to Book</span>
+      </div>
+      <h2>ご予約の流れ</h2>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">01</div>
+        <div class="flow-step-title">ご予約フォームから連絡</div>
+        <p class="flow-step-text">ご希望のコースと日時をお知らせください。LINEからでもOKです。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">02</div>
+        <div class="flow-step-title">予約確定のご連絡</div>
+        <p class="flow-step-text">担当者より予約確定のご案内をメールにてお送りします。場所の詳細もこの時点でお伝えします。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">03</div>
+        <div class="flow-step-title">当日お越しください</div>
+        <p class="flow-step-text">前日に確認メールをお送りします。お時間に余裕を持ってお越しください。</p>
+      </div>
+    </div>
+    <div class="flow-note">※ 完全予約制のため、当日の飛び込みはお受けできません。時間外・定休日のご予約は翌営業日にご連絡いたします。</div>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="access">
+  <div class="access-inner">
+    <div class="access-text">
+      <div class="eyebrow eyebrow--light">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Access</span>
+      </div>
+      <h2>アクセス</h2>
+      <div class="access-item">
+        <div class="access-item-label">エリア</div>
+        <div class="access-item-text">恵比寿駅周辺</div>
+      </div>
+      <div class="access-item">
+        <div class="access-item-label">住所</div>
+        <div class="access-item-text">ご予約確定後、メールにてお知らせいたします。</div>
+      </div>
+      <div class="access-item">
+        <div class="access-item-label">予約</div>
+        <div class="access-item-text">完全予約制</div>
+      </div>
+    </div>
+    <div class="access-cta">
+      <a href="/reservation/" class="btn-warm-full">施術を予約する →</a>
+      <a href="https://lin.ee/xxxx" target="_blank" class="btn-line-full">💬 LINEで相談する</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
