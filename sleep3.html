@@ -315,13 +315,26 @@
   .check-result-body { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 2; }
 
   .check-result-link {
-    margin-top: 14px;
-    display: inline-block;
-    font-size: 13px;
-    color: #7fffc0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    margin-top: 16px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: var(--line-green);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 16px;
+    font-weight: 700;
     letter-spacing: 0.04em;
+    padding: 14px 18px;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.18s;
+  }
+
+  .check-result-link:hover {
+    background: var(--line-green-dark);
+    transform: translateY(-1px);
   }
 
   .check-cta { text-align: center; }
@@ -836,8 +849,8 @@
       <div class="check-result-title">
         2つ以上当てはまる方は、<br>「睡眠だけの問題」ではなく、<br>体の緊張が影響している可能性があります。
       </div>
-      <div class="check-result-body">まずは体と睡眠のつながりについて、LINEでお役立ち情報をお届けします。</div>
-      <a href="https://lin.ee/zQG3do6" target="_blank" class="check-result-link">お悩み相談はこちら（LINE登録）</a>
+      <div class="check-result-body">まずは、今の状態に合った対処法を知ることが大切です。<br><br>あなたの状態に合わせてお届けします</div>
+      <a href="https://lin.ee/zQG3do6" target="_blank" class="check-result-link">→ LINEで改善方法を見る</a>
     </div>
     <div class="check-cta">
       <p class="check-cta-line-label">このあと原因と対策を、順番にご案内します</p>
