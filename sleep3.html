@@ -294,25 +294,35 @@
   .check-q-text { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.65; }
 
   .check-result {
-    display: none;
-    background: rgba(6,199,85,0.08);
-    border: 1px solid rgba(6,199,85,0.35);
-    padding: 24px 28px;
-    margin-bottom: 24px;
+     display: none;
+  background: rgba(255, 248, 235, 0.04);
+  border: 1px solid rgba(216, 176, 106, 0.55);
+  padding: 24px 28px;
+  margin-bottom: 24px;
   }
 
   .check-result.show { display: block; }
 
   .check-result-title {
     font-family: 'Shippori Mincho', serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: #7fffc0;
-    margin-bottom: 12px;
-    line-height: 1.7;
+  font-size: 16px;
+  font-weight: 700;
+  color: #E8CFA8;
+  margin-bottom: 12px;
+  line-height: 1.7;
   }
 
   .check-result-body { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 2; }
+
+  .check-result-link {
+    margin-top: 14px;
+    display: inline-block;
+    font-size: 13px;
+    color: #7fffc0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    letter-spacing: 0.04em;
+  }
 
   .check-cta { text-align: center; }
   .check-cta-line-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.12em; margin-bottom: 8px; }
@@ -380,10 +390,23 @@
   .reason-content h3 {
     font-family: 'Shippori Mincho', serif;
     font-size: clamp(16px, 2vw, 22px);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--deep-brown);
-    line-height: 1.55;
+    line-height: 1.6;
     margin-bottom: 18px;
+    display: inline;
+    background: linear-gradient(transparent 62%, rgba(212,169,106,0.35) 62%);
+    padding: 0 0.2em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .reason-content img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    display: block;
   }
 
   .reason-content p {
@@ -415,7 +438,7 @@
   }
 
   .before-after-caption {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--medium-brown);
     margin-top: 18px;
     line-height: 2;
@@ -742,6 +765,7 @@
     .section-check, .mid-cta { padding-left: 22px; padding-right: 22px; }
     .reason-item { grid-template-columns: 48px 1fr; gap: 16px; }
     .reason-num { font-size: 36px; }
+    .reason-content p { font-size: 15px; line-height: 2.3; }
     .profile-inner { grid-template-columns: 1fr; gap: 36px; }
     .profile-img-box { max-width: 200px; }
   }
@@ -813,6 +837,7 @@
         2つ以上当てはまる方は、<br>「睡眠だけの問題」ではなく、<br>体の緊張が影響している可能性があります。
       </div>
       <div class="check-result-body">まずは体と睡眠のつながりについて、LINEでお役立ち情報をお届けします。</div>
+      <a href="https://lin.ee/zQG3do6" target="_blank" class="check-result-link">お悩み相談はこちら（LINE登録）</a>
     </div>
     <div class="check-cta">
       <p class="check-cta-line-label">このあと原因と対策を、順番にご案内します</p>
@@ -828,30 +853,33 @@
 <section class="section-reason">
   <div class="container">
     <span class="section-label">なぜ体へのアプローチが、眠りに関係するのか</span>
-    <h2 class="section-title">眠れない原因は、<br>体の中にあることがあります。</h2>
+    <h2 class="section-title">眠りない原因は体の中にあるかもしれません</h2>
 
     <div class="reason-list">
       <div class="reason-item">
         <div class="reason-num">01</div>
         <div class="reason-content">
-          <h3>寝返りが打てないと、<br>体は回復できない</h3>
-          <p>寝ている間、ひとは一晩に20〜30回ほど寝返りをうっているといわれています。それは、カラダが睡眠中に自分を回復させるために必要だからです。<br><br>ところが、筋肉が緊張して体がかたくなると、この寝返りがうまくうてなくなります。これが「寝ているのに疲れている」「寝た気がしない」という疲労感に繋がります。</p>
+          <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/04/1777196302798.png" alt="寝返りの写真">
+          <h3>関節が固まると、寝返りがうてない</h3>
+          <p>体が固まっていると、睡眠中の「自己回復」が止まってしまいます。</p>
         </div>
       </div>
 
       <div class="reason-item">
         <div class="reason-num">02</div>
         <div class="reason-content">
-          <h3>自律神経がやすまないと、<br>ねむりは浅くなる</h3>
-          <p>首・肩・背中がコリ固まっていると、呼吸が浅くなります。それは胸郭の動きが制限されるからです。呼吸が浅いと、自律神経が「休む」モード（副交感神経）に切り替わりにくくなります。体は横になっていても、神経はまだ「活動」状態のまま。これが夜中に目が覚めやすくなる背景のひとつです。</p>
+          <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/04/1777191546922.png" alt="首・肩まわりのアップ">
+          <h3>こりによって、呼吸が浅くなる</h3>
+          <p>筋肉の緊張が胸を圧迫し、酸素が全身に行き渡らなくなります。</p>
         </div>
       </div>
 
       <div class="reason-item">
         <div class="reason-num">03</div>
         <div class="reason-content">
-          <h3>眠りは「からだの状態」で変わる</h3>
-          <p>施術では、関節がスムーズにうごくか、筋肉がかたまっていないか、そして呼吸の状態を確認しながらアプローチします。眠りを直接コントロールするのではなく、眠れない原因になっている体の緊張をほぐしていきます<br><br>体がゆるむことで、自然と「いい眠り」に近づきます。</p>
+          <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/04/1777193764256.png" alt="リラックスと自律神経のイメージ">
+          <h3>脳が休まらず、自律神経が乱れる</h3>
+          <p>体が強張ったままだと、神経は「戦闘モード」から切り替わりません。</p>
         </div>
       </div>
     </div>
@@ -859,9 +887,9 @@
     <!-- Before/After：03の直後に統合 -->
     <div class="before-after-block">
       <span class="before-after-label">BEFORE / AFTER</span>
-      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/03/file_00000000c00c7209ac897560c940c7a7.png" alt="施術前後の姿勢変化">
+      <img src="https://remedialtherapy.jp/wordpress/wp-content/uploads/2026/04/ChatGPT-Image-2026年4月27日-17_27_01.png" alt="施術前後の姿勢変化">
       <p class="before-after-caption">
-        姿勢や動きが変わると、寝返りのしやすさや首肩まわりの負担も変わります。体を整えることが、結果として"眠りやすい状態"につながります。
+        だから、体をゆるめることが<br>「最高の眠り」への近道なのです。
       </p>
     </div>
 
